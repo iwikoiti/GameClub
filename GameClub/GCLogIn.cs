@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static GameClub.GamuClubDBDataSet;
 
 namespace GameClub
 {
@@ -17,32 +18,40 @@ namespace GameClub
             InitializeComponent();
         }
 
-        private void GCLogIn_Load(object sender, EventArgs e)
-        {
-        }
-
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            errorLabel.Visible = false;
+            string login = loginInput.Text.ToString().Trim();
+            string password = passwordInput.Text.ToString().Trim();
 
-            string login = (loginInput.Text).ToString();
-            string password = (passwordInput.Text).ToString();
+            Console.WriteLine(login + " " + password);
 
-            var role = (authentificationTableAdapter1.GetDataBy(login, password)).ToString();
+            AuthentificationDataTable dataTable = authentificationTableAdapter1.GetDataByRole(login, password);
 
-            if (role == "ADMIN")
+            if (dataTable.Rows.Count > 0)
             {
-                GCAdmin gcAdmin = new GCAdmin();
-                gcAdmin.Show();
-                //this.Hide();
-                //this.Show();
+                string role = dataTable.Rows[0]["role"].ToString();
+
+                if (role == "ADMIN")
+                {
+                    GCAdmin gcAdmin = new GCAdmin();
+                    gcAdmin.Show();
+                    //this.Hide();
+                    //this.Show
+                }
+                else 
+                {
+                    GCUser gcUser = new GCUser();
+                    gcUser.Show();
+                    //this.Hide();
+                    //this.Show();
+
+                }
             }
             else
             {
-                GCUser gcUser = new GCUser();
-                gcUser.Show();
-                //this.Hide();
-                //this.Show();
-
+                errorLabel.Text = "Ошибка ввода данных. Повторите попытку.";
+                errorLabel.Visible = true;
             }
         }
 

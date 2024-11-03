@@ -5447,8 +5447,8 @@ SELECT login, password, role FROM Authentification WHERE (login = @login)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT role FROM dbo.Authentification\r\nWHERE login = @login AND password = @passw" +
-                "ord";
+            this._commandCollection[1].CommandText = "SELECT role, login, password\r\nFROM     Authentification\r\nWHERE  (login = @login) " +
+                "AND (password = @password)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@login", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5481,33 +5481,8 @@ SELECT login, password, role FROM Authentification WHERE (login = @login)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(GamuClubDBDataSet.AuthentificationDataTable dataTable, string login, string password) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((login == null)) {
-                throw new global::System.ArgumentNullException("login");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(login));
-            }
-            if ((password == null)) {
-                throw new global::System.ArgumentNullException("password");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(password));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual GamuClubDBDataSet.AuthentificationDataTable GetDataBy(string login, string password) {
+        public virtual GamuClubDBDataSet.AuthentificationDataTable GetDataByRole(string login, string password) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((login == null)) {
                 throw new global::System.ArgumentNullException("login");

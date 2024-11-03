@@ -35,6 +35,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.loginBtn = new System.Windows.Forms.Button();
             this.authentificationTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,14 +81,14 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(236, 126);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(384, 285);
+            this.groupBox1.Size = new System.Drawing.Size(384, 307);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Вход";
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(144, 226);
+            this.loginBtn.Location = new System.Drawing.Point(144, 254);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(89, 32);
             this.loginBtn.TabIndex = 5;
@@ -99,21 +100,34 @@
             // 
             this.authentificationTableAdapter1.ClearBeforeFill = true;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(233, 436);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(314, 18);
+            this.errorLabel.TabIndex = 6;
+            this.errorLabel.Text = "Ошибка ввода данных. Повторите попытку.";
+            this.errorLabel.Visible = false;
+            // 
             // GCLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(885, 555);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GCLogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameClub Вход";
-            this.Load += new System.EventHandler(this.GCLogIn_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,6 +140,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button loginBtn;
         private GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter authentificationTableAdapter1;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 
