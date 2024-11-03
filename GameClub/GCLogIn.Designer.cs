@@ -36,6 +36,7 @@
             this.loginBtn = new System.Windows.Forms.Button();
             this.authentificationTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.userTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.UserTableAdapter();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,6 +113,10 @@
             this.errorLabel.Text = "Ошибка ввода данных. Повторите попытку.";
             this.errorLabel.Visible = false;
             // 
+            // userTableAdapter1
+            // 
+            this.userTableAdapter1.ClearBeforeFill = true;
+            // 
             // GCLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -141,6 +146,7 @@
         private System.Windows.Forms.Button loginBtn;
         private GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter authentificationTableAdapter1;
         private System.Windows.Forms.Label errorLabel;
+        private GamuClubDBDataSetTableAdapters.UserTableAdapter userTableAdapter1;
     }
 }
 

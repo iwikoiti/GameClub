@@ -15,7 +15,7 @@
     <Shape ID="DesignTable:Room" ZOrder="14" X="666" Y="70" Height="181" Width="208" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
     <Shape ID="DesignTable:Session" ZOrder="13" X="391" Y="1030" Height="158" Width="219" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:Tariff" ZOrder="12" X="391" Y="70" Height="204" Width="205" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
-    <Shape ID="DesignTable:User" ZOrder="11" X="391" Y="710" Height="250" Width="197" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
+    <Shape ID="DesignTable:User" ZOrder="11" X="391" Y="710" Height="273" Width="213" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_FoodOrder_FoodMenu" ZOrder="10" LineWidth="11">
@@ -133,7 +133,7 @@
           <Y>789</Y>
         </Point>
         <Point>
-          <X>588</X>
+          <X>604</X>
           <Y>789</Y>
         </Point>
       </RoutePoints>

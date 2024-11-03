@@ -26,27 +26,46 @@ namespace GameClub
 
             Console.WriteLine(login + " " + password);
 
-            AuthentificationDataTable dataTable = authentificationTableAdapter1.GetDataByRole(login, password);
+            AuthentificationDataTable dataTableAuth = authentificationTableAdapter1.GetDataByRole(login, password);
 
-            if (dataTable.Rows.Count > 0)
+            if (dataTableAuth.Rows.Count > 0)
             {
-                string role = dataTable.Rows[0]["role"].ToString();
+                string logindb = dataTableAuth.Rows[0]["login"].ToString().Trim();
+                string passworddb = dataTableAuth.Rows[0]["password"].ToString().Trim();
 
-                if (role == "ADMIN")
+                UserDataTable dataTableUser = userTableAdapter1.GetDataByUser(login);
+                string surnamedb = dataTableUser.Rows[0]["surname"].ToString().Trim();
+                string namedb = dataTableUser.Rows[0]["name"].ToString().Trim();
+                string fathernamedb = dataTableUser.Rows[0]["fathername"].ToString().Trim();
+                string birthdaydb = dataTableUser.Rows[0]["birthday"].ToString().Trim();
+                string emaildb = dataTableUser.Rows[0]["email"].ToString().Trim();
+
+                Console.WriteLine(surnamedb + " " + namedb + " " + fathernamedb + " " + birthdaydb + " " + emaildb + " " + logindb + " " + passworddb);
+
+                string roledb = dataTableAuth.Rows[0]["role"].ToString();
+                
+                if (roledb == "ADMIN")
                 {
                     GCAdmin gcAdmin = new GCAdmin();
                     gcAdmin.Show();
-                    //this.Hide();
-                    //this.Show
+                    this.Hide();
+                    DialogResult dr = gcAdmin.ShowDialog();
+                    if (dr == DialogResult.Cancel)
+                    {
+                        this.Show();
+                    }
                 }
                 else 
                 {
-                    GCUser gcUser = new GCUser();
-                    gcUser.Show();
-                    //this.Hide();
-                    //this.Show();
-
+                    GCUser gcUser = new GCUser(surnamedb, namedb, fathernamedb, birthdaydb, emaildb, logindb, passworddb);
+                    this.Hide();
+                    DialogResult dr = gcUser.ShowDialog();
+                    if (dr == DialogResult.Cancel)
+                    {
+                        this.Show();
+                    }
                 }
+
             }
             else
             {
