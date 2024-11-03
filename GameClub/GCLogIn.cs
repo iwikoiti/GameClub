@@ -34,6 +34,7 @@ namespace GameClub
                 string passworddb = dataTableAuth.Rows[0]["password"].ToString().Trim();
 
                 UserDataTable dataTableUser = userTableAdapter1.GetDataByUser(login);
+                int userId = Convert.ToInt32(dataTableUser.Rows[0]["userID"]);
                 string surnamedb = dataTableUser.Rows[0]["surname"].ToString().Trim();
                 string namedb = dataTableUser.Rows[0]["name"].ToString().Trim();
                 string fathernamedb = dataTableUser.Rows[0]["fathername"].ToString().Trim();
@@ -47,7 +48,6 @@ namespace GameClub
                 if (roledb == "ADMIN")
                 {
                     GCAdmin gcAdmin = new GCAdmin();
-                    gcAdmin.Show();
                     this.Hide();
                     DialogResult dr = gcAdmin.ShowDialog();
                     if (dr == DialogResult.Cancel)
@@ -58,6 +58,7 @@ namespace GameClub
                 else 
                 {
                     GCUser gcUser = new GCUser(surnamedb, namedb, fathernamedb, birthdaydb, emaildb, logindb, passworddb);
+                    gcUser.Tag = userId;
                     this.Hide();
                     DialogResult dr = gcUser.ShowDialog();
                     if (dr == DialogResult.Cancel)

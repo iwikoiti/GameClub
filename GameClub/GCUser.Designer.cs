@@ -30,23 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.personalProfile = new System.Windows.Forms.TabPage();
+            this.panelEditInfo = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSaveInfo = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.passwordInput = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.loginInput = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.emailInput = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.fathernameInput = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.nameInput = new System.Windows.Forms.TextBox();
+            this.surnameInput = new System.Windows.Forms.TextBox();
+            this.birthdayInput = new System.Windows.Forms.DateTimePicker();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.authentificationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gamuClubDBDataSet = new GameClub.GamuClubDBDataSet();
@@ -71,8 +71,8 @@
             this.userTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.UserTableAdapter();
             this.authentificationTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.personalProfile.SuspendLayout();
+            this.panelEditInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.authentificationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamuClubDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -80,7 +80,7 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.personalProfile);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -91,55 +91,55 @@
             this.tabControl1.Size = new System.Drawing.Size(1000, 562);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // personalProfile
             // 
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.passwordLabel);
-            this.tabPage1.Controls.Add(this.loginLabel);
-            this.tabPage1.Controls.Add(this.emailLabel);
-            this.tabPage1.Controls.Add(this.birthdayLabel);
-            this.tabPage1.Controls.Add(this.fathernameLabel);
-            this.tabPage1.Controls.Add(this.nameLabel);
-            this.tabPage1.Controls.Add(this.surnameLabel);
-            this.tabPage1.Controls.Add(this.btnExit);
-            this.tabPage1.Controls.Add(this.btnEditInfo);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(992, 529);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Личный кабинет";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.personalProfile.Controls.Add(this.panelEditInfo);
+            this.personalProfile.Controls.Add(this.passwordLabel);
+            this.personalProfile.Controls.Add(this.loginLabel);
+            this.personalProfile.Controls.Add(this.emailLabel);
+            this.personalProfile.Controls.Add(this.birthdayLabel);
+            this.personalProfile.Controls.Add(this.fathernameLabel);
+            this.personalProfile.Controls.Add(this.nameLabel);
+            this.personalProfile.Controls.Add(this.surnameLabel);
+            this.personalProfile.Controls.Add(this.btnExit);
+            this.personalProfile.Controls.Add(this.btnEditInfo);
+            this.personalProfile.Controls.Add(this.label7);
+            this.personalProfile.Controls.Add(this.label6);
+            this.personalProfile.Controls.Add(this.label5);
+            this.personalProfile.Controls.Add(this.label4);
+            this.personalProfile.Controls.Add(this.label3);
+            this.personalProfile.Controls.Add(this.label2);
+            this.personalProfile.Controls.Add(this.label1);
+            this.personalProfile.Location = new System.Drawing.Point(4, 29);
+            this.personalProfile.Name = "personalProfile";
+            this.personalProfile.Padding = new System.Windows.Forms.Padding(3);
+            this.personalProfile.Size = new System.Drawing.Size(992, 529);
+            this.personalProfile.TabIndex = 0;
+            this.personalProfile.Text = "Личный кабинет";
+            this.personalProfile.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // panelEditInfo
             // 
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Location = new System.Drawing.Point(441, 15);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(522, 395);
-            this.panel1.TabIndex = 24;
-            this.panel1.Visible = false;
+            this.panelEditInfo.Controls.Add(this.label15);
+            this.panelEditInfo.Controls.Add(this.btnSaveInfo);
+            this.panelEditInfo.Controls.Add(this.label16);
+            this.panelEditInfo.Controls.Add(this.passwordInput);
+            this.panelEditInfo.Controls.Add(this.label17);
+            this.panelEditInfo.Controls.Add(this.loginInput);
+            this.panelEditInfo.Controls.Add(this.label18);
+            this.panelEditInfo.Controls.Add(this.emailInput);
+            this.panelEditInfo.Controls.Add(this.label19);
+            this.panelEditInfo.Controls.Add(this.label20);
+            this.panelEditInfo.Controls.Add(this.fathernameInput);
+            this.panelEditInfo.Controls.Add(this.label21);
+            this.panelEditInfo.Controls.Add(this.nameInput);
+            this.panelEditInfo.Controls.Add(this.surnameInput);
+            this.panelEditInfo.Controls.Add(this.birthdayInput);
+            this.panelEditInfo.Location = new System.Drawing.Point(441, 15);
+            this.panelEditInfo.Name = "panelEditInfo";
+            this.panelEditInfo.Size = new System.Drawing.Size(522, 395);
+            this.panelEditInfo.TabIndex = 24;
+            this.panelEditInfo.Visible = false;
             // 
             // label15
             // 
@@ -150,14 +150,15 @@
             this.label15.TabIndex = 31;
             this.label15.Text = "Пароль:";
             // 
-            // button3
+            // btnSaveInfo
             // 
-            this.button3.Location = new System.Drawing.Point(160, 356);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 33);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Сохранить";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSaveInfo.Location = new System.Drawing.Point(160, 356);
+            this.btnSaveInfo.Name = "btnSaveInfo";
+            this.btnSaveInfo.Size = new System.Drawing.Size(200, 33);
+            this.btnSaveInfo.TabIndex = 23;
+            this.btnSaveInfo.Text = "Сохранить";
+            this.btnSaveInfo.UseVisualStyleBackColor = true;
+            this.btnSaveInfo.Click += new System.EventHandler(this.btnSaveInfo_Click);
             // 
             // label16
             // 
@@ -168,12 +169,13 @@
             this.label16.TabIndex = 30;
             this.label16.Text = "Логин:";
             // 
-            // textBox6
+            // passwordInput
             // 
-            this.textBox6.Location = new System.Drawing.Point(276, 260);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(200, 27);
-            this.textBox6.TabIndex = 13;
+            this.passwordInput.Location = new System.Drawing.Point(276, 260);
+            this.passwordInput.Name = "passwordInput";
+            this.passwordInput.Size = new System.Drawing.Size(200, 27);
+            this.passwordInput.TabIndex = 13;
+            this.passwordInput.TextChanged += new System.EventHandler(this.surnameInput_TextChanged);
             // 
             // label17
             // 
@@ -184,12 +186,13 @@
             this.label17.TabIndex = 29;
             this.label17.Text = "Дата рождения:";
             // 
-            // textBox5
+            // loginInput
             // 
-            this.textBox5.Location = new System.Drawing.Point(276, 220);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 27);
-            this.textBox5.TabIndex = 12;
+            this.loginInput.Location = new System.Drawing.Point(276, 220);
+            this.loginInput.Name = "loginInput";
+            this.loginInput.Size = new System.Drawing.Size(200, 27);
+            this.loginInput.TabIndex = 12;
+            this.loginInput.TextChanged += new System.EventHandler(this.surnameInput_TextChanged);
             // 
             // label18
             // 
@@ -200,12 +203,13 @@
             this.label18.TabIndex = 28;
             this.label18.Text = "Электронная почта:";
             // 
-            // textBox4
+            // emailInput
             // 
-            this.textBox4.Location = new System.Drawing.Point(276, 180);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 27);
-            this.textBox4.TabIndex = 11;
+            this.emailInput.Location = new System.Drawing.Point(276, 180);
+            this.emailInput.Name = "emailInput";
+            this.emailInput.Size = new System.Drawing.Size(200, 27);
+            this.emailInput.TabIndex = 11;
+            this.emailInput.TextChanged += new System.EventHandler(this.surnameInput_TextChanged);
             // 
             // label19
             // 
@@ -225,12 +229,12 @@
             this.label20.TabIndex = 26;
             this.label20.Text = "Имя:";
             // 
-            // textBox3
+            // fathernameInput
             // 
-            this.textBox3.Location = new System.Drawing.Point(276, 100);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 27);
-            this.textBox3.TabIndex = 10;
+            this.fathernameInput.Location = new System.Drawing.Point(276, 100);
+            this.fathernameInput.Name = "fathernameInput";
+            this.fathernameInput.Size = new System.Drawing.Size(200, 27);
+            this.fathernameInput.TabIndex = 10;
             // 
             // label21
             // 
@@ -241,26 +245,31 @@
             this.label21.TabIndex = 25;
             this.label21.Text = "Фамилия:";
             // 
-            // textBox2
+            // nameInput
             // 
-            this.textBox2.Location = new System.Drawing.Point(276, 60);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 27);
-            this.textBox2.TabIndex = 9;
+            this.nameInput.Location = new System.Drawing.Point(276, 60);
+            this.nameInput.Name = "nameInput";
+            this.nameInput.Size = new System.Drawing.Size(200, 27);
+            this.nameInput.TabIndex = 9;
+            this.nameInput.TextChanged += new System.EventHandler(this.surnameInput_TextChanged);
             // 
-            // textBox1
+            // surnameInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(276, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 27);
-            this.textBox1.TabIndex = 8;
+            this.surnameInput.Location = new System.Drawing.Point(276, 24);
+            this.surnameInput.Name = "surnameInput";
+            this.surnameInput.Size = new System.Drawing.Size(200, 27);
+            this.surnameInput.TabIndex = 8;
+            this.surnameInput.TextChanged += new System.EventHandler(this.surnameInput_TextChanged);
             // 
-            // dateTimePicker1
+            // birthdayInput
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(276, 140);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker1.TabIndex = 7;
+            this.birthdayInput.Checked = false;
+            this.birthdayInput.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.birthdayInput.Location = new System.Drawing.Point(276, 140);
+            this.birthdayInput.Name = "birthdayInput";
+            this.birthdayInput.ShowCheckBox = true;
+            this.birthdayInput.Size = new System.Drawing.Size(200, 27);
+            this.birthdayInput.TabIndex = 7;
             // 
             // passwordLabel
             // 
@@ -356,7 +365,6 @@
             this.btnExit.TabIndex = 15;
             this.btnExit.Text = "Выйти";
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnEditInfo
             // 
@@ -366,6 +374,7 @@
             this.btnEditInfo.TabIndex = 14;
             this.btnEditInfo.Text = "Редактировать личную информацию";
             this.btnEditInfo.UseVisualStyleBackColor = true;
+            this.btnEditInfo.Click += new System.EventHandler(this.btnEditInfo_Click);
             // 
             // label7
             // 
@@ -471,10 +480,10 @@
             this.Text = "GameClub Личный кабинет";
             this.Load += new System.EventHandler(this.GCUser_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.personalProfile.ResumeLayout(false);
+            this.personalProfile.PerformLayout();
+            this.panelEditInfo.ResumeLayout(false);
+            this.panelEditInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.authentificationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamuClubDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
@@ -485,7 +494,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage personalProfile;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label5;
@@ -494,16 +503,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox surnameInput;
+        private System.Windows.Forms.TextBox passwordInput;
+        private System.Windows.Forms.TextBox loginInput;
+        private System.Windows.Forms.TextBox emailInput;
+        private System.Windows.Forms.TextBox fathernameInput;
+        private System.Windows.Forms.TextBox nameInput;
+        private System.Windows.Forms.Panel panelEditInfo;
+        private System.Windows.Forms.Button btnSaveInfo;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label loginLabel;
         private System.Windows.Forms.Label emailLabel;
@@ -525,5 +533,6 @@
         private GamuClubDBDataSetTableAdapters.UserTableAdapter userTableAdapter1;
         private GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter authentificationTableAdapter1;
         private System.Windows.Forms.BindingSource authentificationBindingSource;
+        private System.Windows.Forms.DateTimePicker birthdayInput;
     }
 }
