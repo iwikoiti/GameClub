@@ -55,11 +55,29 @@
     <Compile Include="AddClient.Designer.cs">
       <DependentUpon>AddClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddConsole.Designer.cs">
+      <DependentUpon>AddConsole.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddFoodMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddFoodMenu.Designer.cs">
       <DependentUpon>AddFoodMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPC.Designer.cs">
+      <DependentUpon>AddPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRoom.Designer.cs">
+      <DependentUpon>AddRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="GamuClubDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -89,8 +107,17 @@
     <EmbeddedResource Include="AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddConsole.resx">
+      <DependentUpon>AddConsole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddFoodMenu.resx">
       <DependentUpon>AddFoodMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPC.resx">
+      <DependentUpon>AddPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRoom.resx">
+      <DependentUpon>AddRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GCLogIn.resx">
       <DependentUpon>GCLogIn.cs</DependentUpon>

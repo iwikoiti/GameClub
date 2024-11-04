@@ -171,7 +171,6 @@ namespace GameClub
         }
 
         // Добавление, редактирование, удаление ЕДЫ ИЗ МЕНЮ
-
         private void btnAddFood_Click(object sender, EventArgs e)
         {
             AddFoodMenu menuForm = new AddFoodMenu("add");
@@ -209,5 +208,122 @@ namespace GameClub
                 Updating("menu");
             }
         }
+
+        // Добавление, редактирование, удаление ПК
+        private void btnAddPC_Click(object sender, EventArgs e)
+        {
+            AddPC pcForm = new AddPC("add");
+            pcForm.btnSaveInfo.Enabled = false;
+            DialogResult dr = pcForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Updating("pcs");
+            }
+        }
+
+        private void btnEditPC_Click(object sender, EventArgs e)
+        {
+            string pcId = pcDataGrid.CurrentRow.Cells[0].Value.ToString();
+            AddPC pcForm = new AddPC(pcId);
+
+            pcForm.chairInput.Text = pcDataGrid.CurrentRow.Cells[1].Value.ToString().Trim();
+            pcForm.cpuInput.Text = pcDataGrid.CurrentRow.Cells[2].Value.ToString().Trim();
+            pcForm.hardriveInput.Text = pcDataGrid.CurrentRow.Cells[3].Value.ToString().Trim();
+            pcForm.ramInput.Text = pcDataGrid.CurrentRow.Cells[4].Value.ToString().Trim();
+            pcForm.videocardInput.Text = pcDataGrid.CurrentRow.Cells[5].Value.ToString().Trim();
+            pcForm.storageInput.Text = pcDataGrid.CurrentRow.Cells[6].Value.ToString().Trim();
+            pcForm.monitorInput.Text = pcDataGrid.CurrentRow.Cells[7].Value.ToString().Trim();
+            pcForm.keybordInput.Text = pcDataGrid.CurrentRow.Cells[8].Value.ToString().Trim();
+            pcForm.mouseInput.Text = pcDataGrid.CurrentRow.Cells[9].Value.ToString().Trim();
+
+            DialogResult dr = pcForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Updating("pcs");
+            }
+        }
+
+        private void btnDelPC_Click(object sender, EventArgs e)
+        {
+            int pcDel = Convert.ToInt32(pcDataGrid.CurrentRow.Cells[0].Value);
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить ПК № " + pcDel + "?", "Предупреждение", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                this.pCTableAdapter.DeleteQuery(pcDel);
+                Updating("pcs");
+            }
+        }
+
+        // Добавление, редактирование, удаление КОНСОЛИ
+        private void btnAddConsole_Click(object sender, EventArgs e)
+        {
+            AddConsole consoleForm = new AddConsole("add");
+            consoleForm.btnSaveInfo.Enabled = false;
+            DialogResult dr = consoleForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Updating("consoles");
+            }
+        }
+
+        private void btnEditConsole_Click(object sender, EventArgs e)
+        {
+            string consoleId = consoleDataGrid.CurrentRow.Cells[0].Value.ToString();
+            AddConsole consoleForm = new AddConsole(consoleId);
+
+            consoleForm.modelInput.Text = consoleDataGrid.CurrentRow.Cells[1].Value.ToString().Trim();
+            consoleForm.storageInput.Text = consoleDataGrid.CurrentRow.Cells[2].Value.ToString().Trim();
+            consoleForm.resolutionInput.Text = consoleDataGrid.CurrentRow.Cells[3].Value.ToString().Trim();
+
+            DialogResult dr = consoleForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Updating("consoles");
+            }
+        }
+
+        private void btnDelConsole_Click(object sender, EventArgs e)
+        {
+            int consoleDel = Convert.ToInt32(consoleDataGrid.CurrentRow.Cells[0].Value);
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить Консоль № " + consoleDel + "?", "Предупреждение", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                this.consoleTableAdapter.DeleteQuery(consoleDel);
+                Updating("consoles");
+            }
+        }
+
+        private void btnAddRoom_Click(object sender, EventArgs e)
+        {
+            AddRoom roomForm = new AddRoom("add");
+            roomForm.btnSaveInfo.Enabled = false;
+            DialogResult dr = roomForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Updating("rooms");
+            }
+        }
+
+        private void btnEditRoom_Click(object sender, EventArgs e)
+        {
+            AddRoom roomForm = new AddRoom("add");
+            DialogResult dr = roomForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Updating("rooms");
+            }
+        }
+
+        private void btnDelRoom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Добавление, редактирование, удаление ИГРОВОГО ЗАЛА
+
+
+
     }
 }

@@ -383,6 +383,7 @@
             this.btnDelRoom.TabIndex = 5;
             this.btnDelRoom.Text = "Удалить";
             this.btnDelRoom.UseVisualStyleBackColor = true;
+            this.btnDelRoom.Click += new System.EventHandler(this.btnDelRoom_Click);
             // 
             // btnEditRoom
             // 
@@ -392,6 +393,7 @@
             this.btnEditRoom.TabIndex = 4;
             this.btnEditRoom.Text = "Редактировать";
             this.btnEditRoom.UseVisualStyleBackColor = true;
+            this.btnEditRoom.Click += new System.EventHandler(this.btnEditRoom_Click);
             // 
             // btnAddRoom
             // 
@@ -401,6 +403,7 @@
             this.btnAddRoom.TabIndex = 3;
             this.btnAddRoom.Text = "Добавить";
             this.btnAddRoom.UseVisualStyleBackColor = true;
+            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
             // 
             // roomDataGrid
             // 
@@ -494,6 +497,7 @@
             this.btnDelPC.TabIndex = 5;
             this.btnDelPC.Text = "Удалить";
             this.btnDelPC.UseVisualStyleBackColor = true;
+            this.btnDelPC.Click += new System.EventHandler(this.btnDelPC_Click);
             // 
             // btnEditPC
             // 
@@ -503,6 +507,7 @@
             this.btnEditPC.TabIndex = 4;
             this.btnEditPC.Text = "Редактировать";
             this.btnEditPC.UseVisualStyleBackColor = true;
+            this.btnEditPC.Click += new System.EventHandler(this.btnEditPC_Click);
             // 
             // btnAddPC
             // 
@@ -512,6 +517,7 @@
             this.btnAddPC.TabIndex = 3;
             this.btnAddPC.Text = "Добавить";
             this.btnAddPC.UseVisualStyleBackColor = true;
+            this.btnAddPC.Click += new System.EventHandler(this.btnAddPC_Click);
             // 
             // pcDataGrid
             // 
@@ -727,6 +733,7 @@
             this.btnDelConsole.TabIndex = 5;
             this.btnDelConsole.Text = "Удалить";
             this.btnDelConsole.UseVisualStyleBackColor = true;
+            this.btnDelConsole.Click += new System.EventHandler(this.btnDelConsole_Click);
             // 
             // btnEditConsole
             // 
@@ -736,6 +743,7 @@
             this.btnEditConsole.TabIndex = 4;
             this.btnEditConsole.Text = "Редактировать";
             this.btnEditConsole.UseVisualStyleBackColor = true;
+            this.btnEditConsole.Click += new System.EventHandler(this.btnEditConsole_Click);
             // 
             // btnAddConsole
             // 
@@ -745,6 +753,7 @@
             this.btnAddConsole.TabIndex = 3;
             this.btnAddConsole.Text = "Добавить";
             this.btnAddConsole.UseVisualStyleBackColor = true;
+            this.btnAddConsole.Click += new System.EventHandler(this.btnAddConsole_Click);
             // 
             // tabPage8
             // 
