@@ -70,12 +70,14 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.userTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.UserTableAdapter();
             this.authentificationTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.personalProfile.SuspendLayout();
             this.panelEditInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.authentificationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamuClubDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -441,6 +443,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dateTimePicker1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -467,6 +470,14 @@
             // 
             this.authentificationTableAdapter1.ClearBeforeFill = true;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(625, 196);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
             // GCUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -487,6 +498,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.authentificationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamuClubDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -534,5 +546,6 @@
         private GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter authentificationTableAdapter1;
         private System.Windows.Forms.BindingSource authentificationBindingSource;
         private System.Windows.Forms.DateTimePicker birthdayInput;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

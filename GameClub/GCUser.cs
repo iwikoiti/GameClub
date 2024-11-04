@@ -58,6 +58,8 @@ namespace GameClub
         {
         }
 
+        /* Личный кабинет */
+
         private void btnEditInfo_Click(object sender, EventArgs e)
         {
             panelEditInfo.Visible = true;
@@ -109,4 +111,8 @@ namespace GameClub
             }
         }
     }
+
+    /* Бронирование */
+
+
 }
