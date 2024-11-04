@@ -776,6 +776,7 @@
             this.btnDelFood.TabIndex = 5;
             this.btnDelFood.Text = "Удалить";
             this.btnDelFood.UseVisualStyleBackColor = true;
+            this.btnDelFood.Click += new System.EventHandler(this.btnDelFood_Click);
             // 
             // btnEditFood
             // 
@@ -785,6 +786,7 @@
             this.btnEditFood.TabIndex = 4;
             this.btnEditFood.Text = "Редактировать";
             this.btnEditFood.UseVisualStyleBackColor = true;
+            this.btnEditFood.Click += new System.EventHandler(this.btnEditFood_Click);
             // 
             // btnAddFood
             // 
@@ -794,6 +796,7 @@
             this.btnAddFood.TabIndex = 3;
             this.btnAddFood.Text = "Добавить";
             this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // menuDataGrid
             // 

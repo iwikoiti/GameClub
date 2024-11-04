@@ -168,11 +168,46 @@ namespace GameClub
                 this.authentificationTableAdapter1.DeleteQuery(login);
                 Updating("clients");
             }
-            else
-            {
+        }
 
+        // Добавление, редактирование, удаление ЕДЫ ИЗ МЕНЮ
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            AddFoodMenu menuForm = new AddFoodMenu("add");
+            menuForm.btnSaveInfo.Enabled = false;
+            DialogResult dr = menuForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Updating("menu");
             }
-  
+        }
+
+        private void btnEditFood_Click(object sender, EventArgs e)
+        {
+            string foodId = menuDataGrid.CurrentRow.Cells[2].Value.ToString();
+            AddFoodMenu menuForm = new AddFoodMenu(foodId);
+            menuForm.foodInput.Text = menuDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
+            menuForm.priceInput.Text = menuDataGrid.CurrentRow.Cells[1].Value.ToString().Trim();
+
+            DialogResult dr = menuForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Updating("menu");
+            }
+        }
+
+        private void btnDelFood_Click(object sender, EventArgs e)
+        {
+            int foodDel = Convert.ToInt32(menuDataGrid.CurrentRow.Cells[2].Value);
+            string food = menuDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить " + food + "?", "Предупреждение", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                this.foodMenuTableAdapter.DeleteQuery(foodDel);
+                Updating("menu");
+            }
         }
     }
 }
