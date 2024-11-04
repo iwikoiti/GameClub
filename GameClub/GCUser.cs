@@ -30,6 +30,7 @@ namespace GameClub
             }
             else
             {
+                birthdayInput.Checked = true;
                 birthdayInput.Text = birthdaydb;
                 birthdaydb = birthdaydb.Split(' ')[0];
             }

@@ -33,15 +33,6 @@ namespace GameClub
                 string logindb = dataTableAuth.Rows[0]["login"].ToString().Trim();
                 string passworddb = dataTableAuth.Rows[0]["password"].ToString().Trim();
 
-                UserDataTable dataTableUser = userTableAdapter1.GetDataByUser(login);
-                int userId = Convert.ToInt32(dataTableUser.Rows[0]["userID"]);
-                string surnamedb = dataTableUser.Rows[0]["surname"].ToString().Trim();
-                string namedb = dataTableUser.Rows[0]["name"].ToString().Trim();
-                string fathernamedb = dataTableUser.Rows[0]["fathername"].ToString().Trim();
-                string birthdaydb = dataTableUser.Rows[0]["birthday"].ToString().Trim();
-                string emaildb = dataTableUser.Rows[0]["email"].ToString().Trim();
-
-                Console.WriteLine(surnamedb + " " + namedb + " " + fathernamedb + " " + birthdaydb + " " + emaildb + " " + logindb + " " + passworddb);
 
                 string roledb = dataTableAuth.Rows[0]["role"].ToString();
                 
@@ -57,6 +48,16 @@ namespace GameClub
                 }
                 else 
                 {
+                    UserDataTable dataTableUser = userTableAdapter1.GetDataByUser(login);
+                    int userId = Convert.ToInt32(dataTableUser.Rows[0]["userID"]);
+                    string surnamedb = dataTableUser.Rows[0]["surname"].ToString().Trim();
+                    string namedb = dataTableUser.Rows[0]["name"].ToString().Trim();
+                    string fathernamedb = dataTableUser.Rows[0]["fathername"].ToString().Trim();
+                    string birthdaydb = dataTableUser.Rows[0]["birthday"].ToString().Trim();
+                    string emaildb = dataTableUser.Rows[0]["email"].ToString().Trim();
+
+                    Console.WriteLine(surnamedb + " " + namedb + " " + fathernamedb + " " + birthdaydb + " " + emaildb + " " + logindb + " " + passworddb);
+
                     GCUser gcUser = new GCUser(surnamedb, namedb, fathernamedb, birthdaydb, emaildb, logindb, passworddb);
                     gcUser.Tag = userId;
                     this.Hide();
