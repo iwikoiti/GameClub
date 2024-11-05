@@ -16,6 +16,7 @@ namespace GameClub
         {
             InitializeComponent();
             this.Tag = valueTag;
+            Console.WriteLine(this.Tag);
         }
 
         private void AddRoom_Load(object sender, EventArgs e)
@@ -42,13 +43,30 @@ namespace GameClub
         private void btnSaveInfo_Click(object sender, EventArgs e)
         {
             string newRoom = roomInput.Text.ToString();
-            int newPC = Convert.ToInt32(pcInput.Text);
-            int newConsole = Convert.ToInt32(consoleInput.Text);
+            int? newPC = null;
+            
+            if (pcInput.Text.ToString().Trim() != GCAdmin.notValueinComboBox)
+            {
+                newPC = Convert.ToInt32(pcInput.Text);
+            }
+
+            int? newConsole = null;
+
+            if (consoleInput.Text.ToString().Trim() != GCAdmin.notValueinComboBox)
+            {
+                newConsole = Convert.ToInt32(consoleInput.Text);
+            }
+
             string newInternet = internetInput.Text.ToString();
 
             if (this.Tag.ToString() == "add")
             {
-                this.roomTableAdapter1.InsertQuery(newRoom, newPC, newConsole, newInternet);
+                try
+                {
+                    this.roomTableAdapter1.InsertQuery(newRoom, newPC, newConsole, newInternet);
+                } catch {
+                    MessageBox.Show("Зал с таким названием уже существует.", "Предупреждение");
+                }
             }
             else
             {

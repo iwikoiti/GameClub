@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -295,9 +296,30 @@ namespace GameClub
             }
         }
 
+        public const string notValueinComboBox = "Не выбрано";
+
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
             AddRoom roomForm = new AddRoom("add");
+
+            roomForm.pcInput.Items.Add(notValueinComboBox);
+            roomForm.consoleInput.Items.Add(notValueinComboBox);
+
+            roomForm.pcInput.SelectedItem = notValueinComboBox;
+            roomForm.consoleInput.SelectedItem = notValueinComboBox;
+
+            for (int i = 0; i < pcDataGrid.RowCount; i++)
+            {
+                string pcRowValue = pcDataGrid.Rows[i].Cells[0].Value.ToString().Trim();
+                roomForm.pcInput.Items.Add(pcRowValue);
+            }
+
+            for (int i = 0; i < consoleDataGrid.RowCount; i++)
+            {
+                string consoleRowValue = consoleDataGrid.Rows[i].Cells[0].Value.ToString().Trim();
+                roomForm.consoleInput.Items.Add(consoleRowValue);
+            }
+
             roomForm.btnSaveInfo.Enabled = false;
             DialogResult dr = roomForm.ShowDialog();
             if (dr == DialogResult.OK)
@@ -306,9 +328,59 @@ namespace GameClub
             }
         }
 
+
         private void btnEditRoom_Click(object sender, EventArgs e)
         {
-            AddRoom roomForm = new AddRoom("add");
+            string roomId = roomDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
+            AddRoom roomForm = new AddRoom(roomId);
+
+            roomForm.roomInput.Text = roomId;
+
+            /*************************/
+
+
+            roomForm.pcInput.Items.Add(notValueinComboBox);
+
+            for (int i = 0; i < pcDataGrid.RowCount; i++)
+            {
+                string pcRowValue = pcDataGrid.Rows[i].Cells[0].Value.ToString().Trim();
+                roomForm.pcInput.Items.Add(pcRowValue);
+            }
+            
+            string pcValue = roomDataGrid.CurrentRow.Cells[1].Value.ToString().Trim();
+            if (pcValue == "" || pcValue == null)
+            {
+                roomForm.pcInput.SelectedItem = notValueinComboBox;
+            }
+            else
+            {
+                roomForm.pcInput.SelectedItem = pcValue;
+            }
+
+            /**************/
+
+            roomForm.consoleInput.Items.Add(notValueinComboBox);
+
+            for (int i = 0; i < consoleDataGrid.RowCount; i++)
+            {
+                string consoleRowValue = consoleDataGrid.Rows[i].Cells[0].Value.ToString().Trim();
+                roomForm.consoleInput.Items.Add(consoleRowValue);
+            }
+
+            string consoleValue = roomDataGrid.CurrentRow.Cells[2].Value.ToString().Trim();
+            if (consoleValue == "" || consoleValue == null)
+            {
+                roomForm.consoleInput.SelectedItem = notValueinComboBox;
+            }
+            else
+            {
+                roomForm.consoleInput.SelectedItem = consoleValue;
+            }
+
+            /*************************/
+
+            roomForm.internetInput.Text = roomDataGrid.CurrentRow.Cells[3].Value.ToString().Trim();
+
             DialogResult dr = roomForm.ShowDialog();
             if (dr == DialogResult.OK)
             {
@@ -318,7 +390,14 @@ namespace GameClub
 
         private void btnDelRoom_Click(object sender, EventArgs e)
         {
+            string roomDel = roomDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить Зал " + roomDel + "?", "Предупреждение", MessageBoxButtons.YesNo);
 
+            if (result == DialogResult.Yes)
+            {
+                this.roomTableAdapter.DeleteQuery(roomDel);
+                Updating("rooms");
+            }
         }
 
         // Добавление, редактирование, удаление ИГРОВОГО ЗАЛА

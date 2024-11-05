@@ -30,26 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.consoleInput = new System.Windows.Forms.ComboBox();
+            this.consoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gamuClubDBDataSet = new GameClub.GamuClubDBDataSet();
+            this.pcInput = new System.Windows.Forms.ComboBox();
+            this.pCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.internetInput = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.roomInput = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSaveInfo = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.internetInput = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pcInput = new System.Windows.Forms.ComboBox();
-            this.consoleInput = new System.Windows.Forms.ComboBox();
-            this.consoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gamuClubDBDataSet = new GameClub.GamuClubDBDataSet();
-            this.pCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pCTableAdapter = new GameClub.GamuClubDBDataSetTableAdapters.PCTableAdapter();
             this.consoleTableAdapter = new GameClub.GamuClubDBDataSetTableAdapters.ConsoleTableAdapter();
             this.roomTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.RoomTableAdapter();
+            this.fKRoomConsoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.consoleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamuClubDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKRoomConsoleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,6 +68,65 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(528, 233);
             this.panel1.TabIndex = 39;
+            // 
+            // consoleInput
+            // 
+            this.consoleInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.consoleInput.FormattingEnabled = true;
+            this.consoleInput.Location = new System.Drawing.Point(281, 119);
+            this.consoleInput.Name = "consoleInput";
+            this.consoleInput.Size = new System.Drawing.Size(200, 28);
+            this.consoleInput.TabIndex = 41;
+            // 
+            // consoleBindingSource
+            // 
+            this.consoleBindingSource.DataMember = "Console";
+            this.consoleBindingSource.DataSource = this.gamuClubDBDataSet;
+            // 
+            // gamuClubDBDataSet
+            // 
+            this.gamuClubDBDataSet.DataSetName = "GamuClubDBDataSet";
+            this.gamuClubDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pcInput
+            // 
+            this.pcInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pcInput.FormattingEnabled = true;
+            this.pcInput.Location = new System.Drawing.Point(281, 80);
+            this.pcInput.Name = "pcInput";
+            this.pcInput.Size = new System.Drawing.Size(200, 28);
+            this.pcInput.TabIndex = 40;
+            // 
+            // pCBindingSource
+            // 
+            this.pCBindingSource.DataMember = "PC";
+            this.pCBindingSource.DataSource = this.gamuClubDBDataSet;
+            // 
+            // internetInput
+            // 
+            this.internetInput.Location = new System.Drawing.Point(281, 156);
+            this.internetInput.Name = "internetInput";
+            this.internetInput.Size = new System.Drawing.Size(200, 27);
+            this.internetInput.TabIndex = 33;
+            this.internetInput.TextChanged += new System.EventHandler(this.roomInput_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(48, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(189, 20);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Скорость интернета:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(48, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 20);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Консоль №:";
             // 
             // roomInput
             // 
@@ -114,64 +175,6 @@
             this.btnSaveInfo.UseVisualStyleBackColor = true;
             this.btnSaveInfo.Click += new System.EventHandler(this.btnSaveInfo_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 122);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 20);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Консоль №:";
-            // 
-            // internetInput
-            // 
-            this.internetInput.Location = new System.Drawing.Point(281, 156);
-            this.internetInput.Name = "internetInput";
-            this.internetInput.Size = new System.Drawing.Size(200, 27);
-            this.internetInput.TabIndex = 33;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 161);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 20);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Скорость интернета:";
-            // 
-            // pcInput
-            // 
-            this.pcInput.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.pCBindingSource, "pcID", true));
-            this.pcInput.FormattingEnabled = true;
-            this.pcInput.Location = new System.Drawing.Point(281, 80);
-            this.pcInput.Name = "pcInput";
-            this.pcInput.Size = new System.Drawing.Size(200, 28);
-            this.pcInput.TabIndex = 40;
-            // 
-            // consoleInput
-            // 
-            this.consoleInput.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.consoleBindingSource, "consoleID", true));
-            this.consoleInput.FormattingEnabled = true;
-            this.consoleInput.Location = new System.Drawing.Point(281, 119);
-            this.consoleInput.Name = "consoleInput";
-            this.consoleInput.Size = new System.Drawing.Size(200, 28);
-            this.consoleInput.TabIndex = 41;
-            // 
-            // consoleBindingSource
-            // 
-            this.consoleBindingSource.DataMember = "Console";
-            this.consoleBindingSource.DataSource = this.gamuClubDBDataSet;
-            // 
-            // gamuClubDBDataSet
-            // 
-            this.gamuClubDBDataSet.DataSetName = "GamuClubDBDataSet";
-            this.gamuClubDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pCBindingSource
-            // 
-            this.pCBindingSource.DataMember = "PC";
-            this.pCBindingSource.DataSource = this.gamuClubDBDataSet;
-            // 
             // pCTableAdapter
             // 
             this.pCTableAdapter.ClearBeforeFill = true;
@@ -184,6 +187,11 @@
             // 
             this.roomTableAdapter1.ClearBeforeFill = true;
             // 
+            // fKRoomConsoleBindingSource
+            // 
+            this.fKRoomConsoleBindingSource.DataMember = "FK_Room_Console";
+            this.fKRoomConsoleBindingSource.DataSource = this.consoleBindingSource;
+            // 
             // AddRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -193,7 +201,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSaveInfo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddRoom";
@@ -203,6 +211,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.consoleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamuClubDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKRoomConsoleBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,8 +224,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button btnSaveInfo;
-        private System.Windows.Forms.ComboBox consoleInput;
-        private System.Windows.Forms.ComboBox pcInput;
         public System.Windows.Forms.TextBox internetInput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -226,5 +233,8 @@
         private System.Windows.Forms.BindingSource consoleBindingSource;
         private GamuClubDBDataSetTableAdapters.ConsoleTableAdapter consoleTableAdapter;
         private GamuClubDBDataSetTableAdapters.RoomTableAdapter roomTableAdapter1;
+        public System.Windows.Forms.ComboBox consoleInput;
+        public System.Windows.Forms.ComboBox pcInput;
+        private System.Windows.Forms.BindingSource fKRoomConsoleBindingSource;
     }
 }
