@@ -148,26 +148,33 @@ namespace GameClub
 
         private void btnDelClient_Click(object sender, EventArgs e)
         {
-            int clientDel = Convert.ToInt32(clientDataGrid.CurrentRow.Cells[6].Value);
-            string surname = clientDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
-            string name = clientDataGrid.CurrentRow.Cells[1].Value.ToString().Trim();
-            DialogResult result;
-            if (clientDataGrid.CurrentRow.Cells[2].Value.ToString() != "" && clientDataGrid.CurrentRow.Cells[2].Value != null)
+            try
             {
-                string fathername = clientDataGrid.CurrentRow.Cells[2].Value.ToString().Trim();
-                result = MessageBox.Show("Вы уверены, что хотите удалить клиента " + surname + " " + name + " " + fathername + "?", "Предупреждение", MessageBoxButtons.YesNo);
-            }
-            else
-            {
-                result = MessageBox.Show("Вы уверены, что хотите удалить клиента " + surname + " " + name + "?", "Предупреждение", MessageBoxButtons.YesNo);
-            }
+                int clientDel = Convert.ToInt32(clientDataGrid.CurrentRow.Cells[6].Value);
+                string surname = clientDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
+                string name = clientDataGrid.CurrentRow.Cells[1].Value.ToString().Trim();
+                DialogResult result;
+                if (clientDataGrid.CurrentRow.Cells[2].Value.ToString() != "" && clientDataGrid.CurrentRow.Cells[2].Value != null)
+                {
+                    string fathername = clientDataGrid.CurrentRow.Cells[2].Value.ToString().Trim();
+                    result = MessageBox.Show("Вы уверены, что хотите удалить клиента " + surname + " " + name + " " + fathername + "?", "Предупреждение", MessageBoxButtons.YesNo);
+                }
+                else
+                {
+                    result = MessageBox.Show("Вы уверены, что хотите удалить клиента " + surname + " " + name + "?", "Предупреждение", MessageBoxButtons.YesNo);
+                }
 
-            string login = clientDataGrid.CurrentRow.Cells[5].Value.ToString().Trim();
-            if (result == DialogResult.Yes)
+                string login = clientDataGrid.CurrentRow.Cells[5].Value.ToString().Trim();
+                if (result == DialogResult.Yes)
+                {
+                    this.userTableAdapter.DeleteQuery(clientDel);
+                    this.authentificationTableAdapter1.DeleteQuery(login);
+                    Updating("clients");
+                }
+            }
+            catch
             {
-                this.userTableAdapter.DeleteQuery(clientDel);
-                this.authentificationTableAdapter1.DeleteQuery(login);
-                Updating("clients");
+                MessageBox.Show("Данный пользователь имеет брони. Его удаление сейчас невозможно.");
             }
         }
 
@@ -199,14 +206,21 @@ namespace GameClub
 
         private void btnDelFood_Click(object sender, EventArgs e)
         {
-            int foodDel = Convert.ToInt32(menuDataGrid.CurrentRow.Cells[2].Value);
-            string food = menuDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
-            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить " + food + "?", "Предупреждение", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            try
             {
-                this.foodMenuTableAdapter.DeleteQuery(foodDel);
-                Updating("menu");
+                int foodDel = Convert.ToInt32(menuDataGrid.CurrentRow.Cells[2].Value);
+                string food = menuDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить " + food + "?", "Предупреждение", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.foodMenuTableAdapter.DeleteQuery(foodDel);
+                    Updating("menu");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Данное блюдо используется в некоторых заказах. Его удаление сейчас невозможно.");
             }
         }
 
@@ -246,13 +260,20 @@ namespace GameClub
 
         private void btnDelPC_Click(object sender, EventArgs e)
         {
-            int pcDel = Convert.ToInt32(pcDataGrid.CurrentRow.Cells[0].Value);
-            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить ПК № " + pcDel + "?", "Предупреждение", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            try
             {
-                this.pCTableAdapter.DeleteQuery(pcDel);
-                Updating("pcs");
+                int pcDel = Convert.ToInt32(pcDataGrid.CurrentRow.Cells[0].Value);
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить ПК № " + pcDel + "?", "Предупреждение", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.pCTableAdapter.DeleteQuery(pcDel);
+                    Updating("pcs");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Данный ПК используется в некоторых залах. Его удаление сейчас невозможно.");
             }
         }
 
@@ -286,20 +307,26 @@ namespace GameClub
 
         private void btnDelConsole_Click(object sender, EventArgs e)
         {
-            int consoleDel = Convert.ToInt32(consoleDataGrid.CurrentRow.Cells[0].Value);
-            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить Консоль № " + consoleDel + "?", "Предупреждение", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            try
             {
-                this.consoleTableAdapter.DeleteQuery(consoleDel);
-                Updating("consoles");
+                int consoleDel = Convert.ToInt32(consoleDataGrid.CurrentRow.Cells[0].Value);
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить Консоль № " + consoleDel + "?", "Предупреждение", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.consoleTableAdapter.DeleteQuery(consoleDel);
+                    Updating("consoles");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Данная консоль используется в некоторых залах. Его удаление сейчас невозможно.");
             }
         }
 
         public const string notValueinComboBox = "Не выбрано";
 
         // Добавление, редактирование, удаление ИГРОВОГО ЗАЛА
-
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
             AddRoom roomForm = new AddRoom("add");
@@ -329,7 +356,6 @@ namespace GameClub
                 Updating("rooms");
             }
         }
-
 
         private void btnEditRoom_Click(object sender, EventArgs e)
         {
@@ -392,13 +418,20 @@ namespace GameClub
 
         private void btnDelRoom_Click(object sender, EventArgs e)
         {
-            string roomDel = roomDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
-            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить Зал " + roomDel + "?", "Предупреждение", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            try
             {
-                this.roomTableAdapter.DeleteQuery(roomDel);
-                Updating("rooms");
+                string roomDel = roomDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить Зал " + roomDel + "?", "Предупреждение", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.roomTableAdapter.DeleteQuery(roomDel);
+                    Updating("rooms");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Данный зал стоит в тарифах. Его удаление сейчас невозможно.");
             }
         }
 
@@ -461,14 +494,21 @@ namespace GameClub
 
         private void btnDelTariff_Click(object sender, EventArgs e)
         {
-            int tariffDel = Convert.ToInt32(tariffDataGrid.CurrentRow.Cells[4].Value);
-            string tariffName = tariffDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
-            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить Тариф " + tariffName + "?", "Предупреждение", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            try
             {
-                this.tariffTableAdapter.DeleteQuery(tariffDel);
-                Updating("tariffs");
+                int tariffDel = Convert.ToInt32(tariffDataGrid.CurrentRow.Cells[4].Value);
+                string tariffName = tariffDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить Тариф " + tariffName + "?", "Предупреждение", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.tariffTableAdapter.DeleteQuery(tariffDel);
+                    Updating("tariffs");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Данный тариф стоит в бронированиях. Его удаление сейчас невозможно.");
             }
         }
     }
