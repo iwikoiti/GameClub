@@ -59,7 +59,7 @@ SELECT login, password, role FROM Authentification WHERE (login = @login)</Comma
               <Mapping SourceColumn="role" DataSetColumn="role" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Authentification
@@ -110,7 +110,7 @@ SELECT login, password, role FROM Authentification WHERE (login = @login)</Comma
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE Authentification
@@ -185,7 +185,7 @@ SELECT consoleID, model, storage, resolution FROM Console WHERE (consoleID = @co
               <Mapping SourceColumn="resolution" DataSetColumn="resolution" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Console
@@ -196,7 +196,7 @@ WHERE  (consoleID = @Original_consoleID)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Console
@@ -211,7 +211,7 @@ SELECT consoleID, model, storage, resolution FROM Console WHERE (consoleID = SCO
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE Console
@@ -281,7 +281,7 @@ SELECT foodID, foodName, foodPrice FROM FoodMenu WHERE (foodID = @foodID)</Comma
               <Mapping SourceColumn="foodPrice" DataSetColumn="foodPrice" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM FoodMenu
@@ -292,7 +292,7 @@ WHERE  (foodID = @Original_foodID)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO FoodMenu
@@ -473,7 +473,7 @@ SELECT pcID, chair, CPU, hardDrive, RAM, videoCard, storage, monitor, keyboard, 
               <Mapping SourceColumn="mouse" DataSetColumn="mouse" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM PC
@@ -484,7 +484,7 @@ WHERE  (pcID = @Original_pcID)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO PC
@@ -505,7 +505,7 @@ SELECT pcID, chair, CPU, hardDrive, RAM, videoCard, storage, monitor, keyboard, 
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE PC
@@ -660,7 +660,7 @@ SELECT nameRoom, pcID, consoleID, internet FROM Room WHERE (nameRoom = @nameRoom
               <Mapping SourceColumn="internet" DataSetColumn="internet" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Room
@@ -671,7 +671,7 @@ WHERE  (nameRoom = @Original_nameRoom)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Room
@@ -687,7 +687,7 @@ SELECT nameRoom, pcID, consoleID, internet FROM Room WHERE (nameRoom = @nameRoom
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE Room
@@ -818,7 +818,53 @@ SELECT tariffID, nameTariff, hoursCount, nameRoom, price FROM Tariff WHERE (tari
               <Mapping SourceColumn="nameRoom" DataSetColumn="nameRoom" />
               <Mapping SourceColumn="price" DataSetColumn="price" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM Tariff
+WHERE  (tariffID = @Original_tariffID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_tariffID" ColumnName="tariffID" DataSourceName="GamuClubDB.dbo.Tariff" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_tariffID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="tariffID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO Tariff
+                  (nameTariff, hoursCount, nameRoom, price)
+VALUES (@nameTariff,@hoursCount,@nameRoom,@price); 
+SELECT tariffID, nameTariff, hoursCount, nameRoom, price FROM Tariff WHERE (tariffID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="nameTariff" ColumnName="nameTariff" DataSourceName="GamuClubDB.dbo.Tariff" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@nameTariff" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="nameTariff" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="hoursCount" ColumnName="hoursCount" DataSourceName="GamuClubDB.dbo.Tariff" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@hoursCount" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="hoursCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="nameRoom" ColumnName="nameRoom" DataSourceName="GamuClubDB.dbo.Tariff" DataTypeServer="varchar(30)" DbType="AnsiString" Direction="Input" ParameterName="@nameRoom" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumn="nameRoom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="price" ColumnName="price" DataSourceName="GamuClubDB.dbo.Tariff" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@price" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="price" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQuery">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE Tariff
+SET          nameTariff = @nameTariff, hoursCount = @hoursCount, nameRoom = @nameRoom, price = @price
+WHERE  (tariffID = @Original_tariffID); 
+SELECT tariffID, nameTariff, hoursCount, nameRoom, price FROM Tariff WHERE (tariffID = @tariffID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="nameTariff" ColumnName="nameTariff" DataSourceName="GamuClubDB.dbo.Tariff" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@nameTariff" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="nameTariff" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="hoursCount" ColumnName="hoursCount" DataSourceName="GamuClubDB.dbo.Tariff" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@hoursCount" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="hoursCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="nameRoom" ColumnName="nameRoom" DataSourceName="GamuClubDB.dbo.Tariff" DataTypeServer="varchar(30)" DbType="AnsiString" Direction="Input" ParameterName="@nameRoom" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumn="nameRoom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="price" ColumnName="price" DataSourceName="GamuClubDB.dbo.Tariff" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@price" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="price" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_tariffID" ColumnName="tariffID" DataSourceName="GamuClubDB.dbo.Tariff" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_tariffID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="tariffID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="tariffID" ColumnName="tariffID" DataSourceName="GamuClubDB.dbo.Tariff" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@tariffID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="tariffID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserTableAdapter" GeneratorDataComponentClassName="UserTableAdapter" Name="User" UserDataComponentName="UserTableAdapter">
             <MainSource>
@@ -895,7 +941,7 @@ SELECT userID, surname, name, fathername, birthday, email, login FROM [User] WHE
               <Mapping SourceColumn="login" DataSetColumn="login" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [User]
@@ -936,7 +982,7 @@ SELECT userID, surname, name, fathername, birthday, email, login FROM [User] WHE
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="GamuClubDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [User]
@@ -1275,15 +1321,15 @@ SELECT userID, surname, name, fathername, birthday, email, login FROM [User] WHE
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_FoodOrder_FoodMenu" msdata:parent="FoodMenu" msdata:child="FoodOrder" msdata:parentkey="foodID" msdata:childkey="foodID" msprop:Generator_UserParentTable="FoodMenu" msprop:Generator_UserChildTable="FoodOrder" msprop:Generator_RelationVarName="relationFK_FoodOrder_FoodMenu" msprop:Generator_ChildPropName="GetFoodOrderRows" msprop:Generator_UserRelationName="FK_FoodOrder_FoodMenu" msprop:Generator_ParentPropName="FoodMenuRow" />
-      <msdata:Relationship name="FK_FoodOrder_Session" msdata:parent="Session" msdata:child="FoodOrder" msdata:parentkey="sessionID" msdata:childkey="sessionID" msprop:Generator_UserParentTable="Session" msprop:Generator_UserChildTable="FoodOrder" msprop:Generator_RelationVarName="relationFK_FoodOrder_Session" msprop:Generator_ChildPropName="GetFoodOrderRows" msprop:Generator_ParentPropName="SessionRow" msprop:Generator_UserRelationName="FK_FoodOrder_Session" />
-      <msdata:Relationship name="FK_Reservation_Tariff" msdata:parent="Tariff" msdata:child="Reservation" msdata:parentkey="tariffID" msdata:childkey="tariffID" msprop:Generator_UserParentTable="Tariff" msprop:Generator_UserChildTable="Reservation" msprop:Generator_RelationVarName="relationFK_Reservation_Tariff" msprop:Generator_ChildPropName="GetReservationRows" msprop:Generator_ParentPropName="TariffRow" msprop:Generator_UserRelationName="FK_Reservation_Tariff" />
-      <msdata:Relationship name="FK_Reservation_User" msdata:parent="User" msdata:child="Reservation" msdata:parentkey="userID" msdata:childkey="userID" msprop:Generator_UserParentTable="User" msprop:Generator_UserChildTable="Reservation" msprop:Generator_RelationVarName="relationFK_Reservation_User" msprop:Generator_ChildPropName="GetReservationRows" msprop:Generator_ParentPropName="UserRow" msprop:Generator_UserRelationName="FK_Reservation_User" />
-      <msdata:Relationship name="FK_Room_Console" msdata:parent="Console" msdata:child="Room" msdata:parentkey="consoleID" msdata:childkey="consoleID" msprop:Generator_UserParentTable="Console" msprop:Generator_UserChildTable="Room" msprop:Generator_RelationVarName="relationFK_Room_Console" msprop:Generator_ChildPropName="GetRoomRows" msprop:Generator_UserRelationName="FK_Room_Console" msprop:Generator_ParentPropName="ConsoleRow" />
-      <msdata:Relationship name="FK_Room_PC" msdata:parent="PC" msdata:child="Room" msdata:parentkey="pcID" msdata:childkey="pcID" msprop:Generator_UserParentTable="PC" msprop:Generator_UserChildTable="Room" msprop:Generator_RelationVarName="relationFK_Room_PC" msprop:Generator_ChildPropName="GetRoomRows" msprop:Generator_UserRelationName="FK_Room_PC" msprop:Generator_ParentPropName="PCRow" />
-      <msdata:Relationship name="FK_Session_Reservation" msdata:parent="Reservation" msdata:child="Session" msdata:parentkey="reservationID" msdata:childkey="reservationID" msprop:Generator_UserParentTable="Reservation" msprop:Generator_UserChildTable="Session" msprop:Generator_RelationVarName="relationFK_Session_Reservation" msprop:Generator_ChildPropName="GetSessionRows" msprop:Generator_UserRelationName="FK_Session_Reservation" msprop:Generator_ParentPropName="ReservationRow" />
-      <msdata:Relationship name="FK_Tariff_Room" msdata:parent="Room" msdata:child="Tariff" msdata:parentkey="nameRoom" msdata:childkey="nameRoom" msprop:Generator_UserParentTable="Room" msprop:Generator_UserChildTable="Tariff" msprop:Generator_RelationVarName="relationFK_Tariff_Room" msprop:Generator_ChildPropName="GetTariffRows" msprop:Generator_UserRelationName="FK_Tariff_Room" msprop:Generator_ParentPropName="RoomRow" />
-      <msdata:Relationship name="FK_User_Authentification" msdata:parent="Authentification" msdata:child="User" msdata:parentkey="login" msdata:childkey="login" msprop:Generator_UserParentTable="Authentification" msprop:Generator_UserChildTable="User" msprop:Generator_RelationVarName="relationFK_User_Authentification" msprop:Generator_ChildPropName="GetUserRows" msprop:Generator_UserRelationName="FK_User_Authentification" msprop:Generator_ParentPropName="AuthentificationRow" />
+      <msdata:Relationship name="FK_FoodOrder_FoodMenu" msdata:parent="FoodMenu" msdata:child="FoodOrder" msdata:parentkey="foodID" msdata:childkey="foodID" msprop:Generator_UserParentTable="FoodMenu" msprop:Generator_UserChildTable="FoodOrder" msprop:Generator_RelationVarName="relationFK_FoodOrder_FoodMenu" msprop:Generator_ChildPropName="GetFoodOrderRows" msprop:Generator_ParentPropName="FoodMenuRow" msprop:Generator_UserRelationName="FK_FoodOrder_FoodMenu" />
+      <msdata:Relationship name="FK_FoodOrder_Session" msdata:parent="Session" msdata:child="FoodOrder" msdata:parentkey="sessionID" msdata:childkey="sessionID" msprop:Generator_UserParentTable="Session" msprop:Generator_UserChildTable="FoodOrder" msprop:Generator_RelationVarName="relationFK_FoodOrder_Session" msprop:Generator_ChildPropName="GetFoodOrderRows" msprop:Generator_UserRelationName="FK_FoodOrder_Session" msprop:Generator_ParentPropName="SessionRow" />
+      <msdata:Relationship name="FK_Reservation_Tariff" msdata:parent="Tariff" msdata:child="Reservation" msdata:parentkey="tariffID" msdata:childkey="tariffID" msprop:Generator_UserParentTable="Tariff" msprop:Generator_UserChildTable="Reservation" msprop:Generator_RelationVarName="relationFK_Reservation_Tariff" msprop:Generator_ChildPropName="GetReservationRows" msprop:Generator_UserRelationName="FK_Reservation_Tariff" msprop:Generator_ParentPropName="TariffRow" />
+      <msdata:Relationship name="FK_Reservation_User" msdata:parent="User" msdata:child="Reservation" msdata:parentkey="userID" msdata:childkey="userID" msprop:Generator_UserParentTable="User" msprop:Generator_UserChildTable="Reservation" msprop:Generator_RelationVarName="relationFK_Reservation_User" msprop:Generator_ChildPropName="GetReservationRows" msprop:Generator_UserRelationName="FK_Reservation_User" msprop:Generator_ParentPropName="UserRow" />
+      <msdata:Relationship name="FK_Room_Console" msdata:parent="Console" msdata:child="Room" msdata:parentkey="consoleID" msdata:childkey="consoleID" msprop:Generator_UserParentTable="Console" msprop:Generator_UserChildTable="Room" msprop:Generator_RelationVarName="relationFK_Room_Console" msprop:Generator_ChildPropName="GetRoomRows" msprop:Generator_ParentPropName="ConsoleRow" msprop:Generator_UserRelationName="FK_Room_Console" />
+      <msdata:Relationship name="FK_Room_PC" msdata:parent="PC" msdata:child="Room" msdata:parentkey="pcID" msdata:childkey="pcID" msprop:Generator_UserParentTable="PC" msprop:Generator_UserChildTable="Room" msprop:Generator_RelationVarName="relationFK_Room_PC" msprop:Generator_ChildPropName="GetRoomRows" msprop:Generator_ParentPropName="PCRow" msprop:Generator_UserRelationName="FK_Room_PC" />
+      <msdata:Relationship name="FK_Session_Reservation" msdata:parent="Reservation" msdata:child="Session" msdata:parentkey="reservationID" msdata:childkey="reservationID" msprop:Generator_UserParentTable="Reservation" msprop:Generator_UserChildTable="Session" msprop:Generator_RelationVarName="relationFK_Session_Reservation" msprop:Generator_ChildPropName="GetSessionRows" msprop:Generator_ParentPropName="ReservationRow" msprop:Generator_UserRelationName="FK_Session_Reservation" />
+      <msdata:Relationship name="FK_Tariff_Room" msdata:parent="Room" msdata:child="Tariff" msdata:parentkey="nameRoom" msdata:childkey="nameRoom" msprop:Generator_UserParentTable="Room" msprop:Generator_UserChildTable="Tariff" msprop:Generator_RelationVarName="relationFK_Tariff_Room" msprop:Generator_ChildPropName="GetTariffRows" msprop:Generator_ParentPropName="RoomRow" msprop:Generator_UserRelationName="FK_Tariff_Room" />
+      <msdata:Relationship name="FK_User_Authentification" msdata:parent="Authentification" msdata:child="User" msdata:parentkey="login" msdata:childkey="login" msprop:Generator_UserParentTable="Authentification" msprop:Generator_UserChildTable="User" msprop:Generator_RelationVarName="relationFK_User_Authentification" msprop:Generator_ChildPropName="GetUserRows" msprop:Generator_ParentPropName="AuthentificationRow" msprop:Generator_UserRelationName="FK_User_Authentification" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

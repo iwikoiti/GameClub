@@ -79,6 +79,12 @@
     <Compile Include="AddRoom.Designer.cs">
       <DependentUpon>AddRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTariff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTariff.Designer.cs">
+      <DependentUpon>AddTariff.cs</DependentUpon>
+    </Compile>
     <Compile Include="GamuClubDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddRoom.resx">
       <DependentUpon>AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTariff.resx">
+      <DependentUpon>AddTariff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GCLogIn.resx">
       <DependentUpon>GCLogIn.cs</DependentUpon>

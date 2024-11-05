@@ -39,6 +39,13 @@
             this.btnEditClient = new System.Windows.Forms.Button();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.clientDataGrid = new System.Windows.Forms.DataGridView();
+            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fathernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gamuClubDBDataSet = new GameClub.GamuClubDBDataSet();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -47,6 +54,11 @@
             this.btnEditTariff = new System.Windows.Forms.Button();
             this.btnAddTariff = new System.Windows.Forms.Button();
             this.tariffDataGrid = new System.Windows.Forms.DataGridView();
+            this.nameTariffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoursCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameRoomDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tariffIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tariffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -93,6 +105,9 @@
             this.btnEditFood = new System.Windows.Forms.Button();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.menuDataGrid = new System.Windows.Forms.DataGridView();
+            this.foodNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.foodPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.foodIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.foodMenuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userTableAdapter = new GameClub.GamuClubDBDataSetTableAdapters.UserTableAdapter();
             this.consoleTableAdapter = new GameClub.GamuClubDBDataSetTableAdapters.ConsoleTableAdapter();
@@ -100,21 +115,6 @@
             this.roomTableAdapter = new GameClub.GamuClubDBDataSetTableAdapters.RoomTableAdapter();
             this.tariffTableAdapter = new GameClub.GamuClubDBDataSetTableAdapters.TariffTableAdapter();
             this.foodMenuTableAdapter = new GameClub.GamuClubDBDataSetTableAdapters.FoodMenuTableAdapter();
-            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fathernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameTariffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoursCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameRoomDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tariffIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.foodNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.foodPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.foodIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authentificationTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -267,6 +267,72 @@
             this.clientDataGrid.Size = new System.Drawing.Size(1164, 523);
             this.clientDataGrid.TabIndex = 0;
             // 
+            // surnameDataGridViewTextBoxColumn
+            // 
+            this.surnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fathernameDataGridViewTextBoxColumn
+            // 
+            this.fathernameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fathernameDataGridViewTextBoxColumn.DataPropertyName = "fathername";
+            this.fathernameDataGridViewTextBoxColumn.HeaderText = "Отчество";
+            this.fathernameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fathernameDataGridViewTextBoxColumn.Name = "fathernameDataGridViewTextBoxColumn";
+            this.fathernameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // birthdayDataGridViewTextBoxColumn
+            // 
+            this.birthdayDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "birthday";
+            this.birthdayDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
+            this.birthdayDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
+            this.birthdayDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Электронная почта";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "Логин";
+            this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
+            this.loginDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // userIDDataGridViewTextBoxColumn
+            // 
+            this.userIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "userID";
+            this.userIDDataGridViewTextBoxColumn.HeaderText = "userID";
+            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            this.userIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.userIDDataGridViewTextBoxColumn.Visible = false;
+            this.userIDDataGridViewTextBoxColumn.Width = 125;
+            // 
             // userBindingSource
             // 
             this.userBindingSource.DataMember = "User";
@@ -307,6 +373,7 @@
             this.btnDelTariff.TabIndex = 5;
             this.btnDelTariff.Text = "Удалить";
             this.btnDelTariff.UseVisualStyleBackColor = true;
+            this.btnDelTariff.Click += new System.EventHandler(this.btnDelTariff_Click);
             // 
             // btnEditTariff
             // 
@@ -316,6 +383,7 @@
             this.btnEditTariff.TabIndex = 4;
             this.btnEditTariff.Text = "Редактировать";
             this.btnEditTariff.UseVisualStyleBackColor = true;
+            this.btnEditTariff.Click += new System.EventHandler(this.btnEditTariff_Click);
             // 
             // btnAddTariff
             // 
@@ -325,6 +393,7 @@
             this.btnAddTariff.TabIndex = 3;
             this.btnAddTariff.Text = "Добавить";
             this.btnAddTariff.UseVisualStyleBackColor = true;
+            this.btnAddTariff.Click += new System.EventHandler(this.btnAddTariff_Click);
             // 
             // tariffDataGrid
             // 
@@ -347,6 +416,52 @@
             this.tariffDataGrid.RowTemplate.Height = 24;
             this.tariffDataGrid.Size = new System.Drawing.Size(1170, 529);
             this.tariffDataGrid.TabIndex = 0;
+            // 
+            // nameTariffDataGridViewTextBoxColumn
+            // 
+            this.nameTariffDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameTariffDataGridViewTextBoxColumn.DataPropertyName = "nameTariff";
+            this.nameTariffDataGridViewTextBoxColumn.HeaderText = "Название тарифа";
+            this.nameTariffDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameTariffDataGridViewTextBoxColumn.Name = "nameTariffDataGridViewTextBoxColumn";
+            this.nameTariffDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hoursCountDataGridViewTextBoxColumn
+            // 
+            this.hoursCountDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.hoursCountDataGridViewTextBoxColumn.DataPropertyName = "hoursCount";
+            this.hoursCountDataGridViewTextBoxColumn.HeaderText = "Продолжительность";
+            this.hoursCountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hoursCountDataGridViewTextBoxColumn.Name = "hoursCountDataGridViewTextBoxColumn";
+            this.hoursCountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameRoomDataGridViewTextBoxColumn1
+            // 
+            this.nameRoomDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameRoomDataGridViewTextBoxColumn1.DataPropertyName = "nameRoom";
+            this.nameRoomDataGridViewTextBoxColumn1.HeaderText = "Название зала";
+            this.nameRoomDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.nameRoomDataGridViewTextBoxColumn1.Name = "nameRoomDataGridViewTextBoxColumn1";
+            this.nameRoomDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Стоимость тарифа";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tariffIDDataGridViewTextBoxColumn
+            // 
+            this.tariffIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tariffIDDataGridViewTextBoxColumn.DataPropertyName = "tariffID";
+            this.tariffIDDataGridViewTextBoxColumn.HeaderText = "tariffID";
+            this.tariffIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tariffIDDataGridViewTextBoxColumn.Name = "tariffIDDataGridViewTextBoxColumn";
+            this.tariffIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tariffIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // tariffBindingSource
             // 
@@ -827,6 +942,34 @@
             this.menuDataGrid.Size = new System.Drawing.Size(1170, 529);
             this.menuDataGrid.TabIndex = 0;
             // 
+            // foodNameDataGridViewTextBoxColumn
+            // 
+            this.foodNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.foodNameDataGridViewTextBoxColumn.DataPropertyName = "foodName";
+            this.foodNameDataGridViewTextBoxColumn.HeaderText = "Название блюда";
+            this.foodNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.foodNameDataGridViewTextBoxColumn.Name = "foodNameDataGridViewTextBoxColumn";
+            this.foodNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // foodPriceDataGridViewTextBoxColumn
+            // 
+            this.foodPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.foodPriceDataGridViewTextBoxColumn.DataPropertyName = "foodPrice";
+            this.foodPriceDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.foodPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.foodPriceDataGridViewTextBoxColumn.Name = "foodPriceDataGridViewTextBoxColumn";
+            this.foodPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // foodIDDataGridViewTextBoxColumn
+            // 
+            this.foodIDDataGridViewTextBoxColumn.DataPropertyName = "foodID";
+            this.foodIDDataGridViewTextBoxColumn.HeaderText = "foodID";
+            this.foodIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.foodIDDataGridViewTextBoxColumn.Name = "foodIDDataGridViewTextBoxColumn";
+            this.foodIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.foodIDDataGridViewTextBoxColumn.Visible = false;
+            this.foodIDDataGridViewTextBoxColumn.Width = 125;
+            // 
             // foodMenuBindingSource
             // 
             this.foodMenuBindingSource.DataMember = "FoodMenu";
@@ -855,146 +998,6 @@
             // foodMenuTableAdapter
             // 
             this.foodMenuTableAdapter.ClearBeforeFill = true;
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fathernameDataGridViewTextBoxColumn
-            // 
-            this.fathernameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fathernameDataGridViewTextBoxColumn.DataPropertyName = "fathername";
-            this.fathernameDataGridViewTextBoxColumn.HeaderText = "Отчество";
-            this.fathernameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fathernameDataGridViewTextBoxColumn.Name = "fathernameDataGridViewTextBoxColumn";
-            this.fathernameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // birthdayDataGridViewTextBoxColumn
-            // 
-            this.birthdayDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "birthday";
-            this.birthdayDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
-            this.birthdayDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
-            this.birthdayDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Электронная почта";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // loginDataGridViewTextBoxColumn
-            // 
-            this.loginDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
-            this.loginDataGridViewTextBoxColumn.HeaderText = "Логин";
-            this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
-            this.loginDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "userID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "userID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.userIDDataGridViewTextBoxColumn.Visible = false;
-            this.userIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nameTariffDataGridViewTextBoxColumn
-            // 
-            this.nameTariffDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameTariffDataGridViewTextBoxColumn.DataPropertyName = "nameTariff";
-            this.nameTariffDataGridViewTextBoxColumn.HeaderText = "Название тарифа";
-            this.nameTariffDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameTariffDataGridViewTextBoxColumn.Name = "nameTariffDataGridViewTextBoxColumn";
-            this.nameTariffDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hoursCountDataGridViewTextBoxColumn
-            // 
-            this.hoursCountDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.hoursCountDataGridViewTextBoxColumn.DataPropertyName = "hoursCount";
-            this.hoursCountDataGridViewTextBoxColumn.HeaderText = "Продолжительность";
-            this.hoursCountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hoursCountDataGridViewTextBoxColumn.Name = "hoursCountDataGridViewTextBoxColumn";
-            this.hoursCountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameRoomDataGridViewTextBoxColumn1
-            // 
-            this.nameRoomDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameRoomDataGridViewTextBoxColumn1.DataPropertyName = "nameRoom";
-            this.nameRoomDataGridViewTextBoxColumn1.HeaderText = "Название зала";
-            this.nameRoomDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.nameRoomDataGridViewTextBoxColumn1.Name = "nameRoomDataGridViewTextBoxColumn1";
-            this.nameRoomDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Стоимость тарифа";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tariffIDDataGridViewTextBoxColumn
-            // 
-            this.tariffIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tariffIDDataGridViewTextBoxColumn.DataPropertyName = "tariffID";
-            this.tariffIDDataGridViewTextBoxColumn.HeaderText = "tariffID";
-            this.tariffIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tariffIDDataGridViewTextBoxColumn.Name = "tariffIDDataGridViewTextBoxColumn";
-            this.tariffIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tariffIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // foodNameDataGridViewTextBoxColumn
-            // 
-            this.foodNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.foodNameDataGridViewTextBoxColumn.DataPropertyName = "foodName";
-            this.foodNameDataGridViewTextBoxColumn.HeaderText = "Название блюда";
-            this.foodNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.foodNameDataGridViewTextBoxColumn.Name = "foodNameDataGridViewTextBoxColumn";
-            this.foodNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // foodPriceDataGridViewTextBoxColumn
-            // 
-            this.foodPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.foodPriceDataGridViewTextBoxColumn.DataPropertyName = "foodPrice";
-            this.foodPriceDataGridViewTextBoxColumn.HeaderText = "Цена";
-            this.foodPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.foodPriceDataGridViewTextBoxColumn.Name = "foodPriceDataGridViewTextBoxColumn";
-            this.foodPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // foodIDDataGridViewTextBoxColumn
-            // 
-            this.foodIDDataGridViewTextBoxColumn.DataPropertyName = "foodID";
-            this.foodIDDataGridViewTextBoxColumn.HeaderText = "foodID";
-            this.foodIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.foodIDDataGridViewTextBoxColumn.Name = "foodIDDataGridViewTextBoxColumn";
-            this.foodIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.foodIDDataGridViewTextBoxColumn.Visible = false;
-            this.foodIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // authentificationTableAdapter1
             // 

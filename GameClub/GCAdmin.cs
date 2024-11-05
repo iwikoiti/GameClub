@@ -298,6 +298,8 @@ namespace GameClub
 
         public const string notValueinComboBox = "Не выбрано";
 
+        // Добавление, редактирование, удаление ИГРОВОГО ЗАЛА
+
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
             AddRoom roomForm = new AddRoom("add");
@@ -400,9 +402,74 @@ namespace GameClub
             }
         }
 
-        // Добавление, редактирование, удаление ИГРОВОГО ЗАЛА
+        // Добавление, редактирование, удаление ТАРИФА
+        private void btnAddTariff_Click(object sender, EventArgs e)
+        {
+            AddTariff tariffForm = new AddTariff("add");
 
+            tariffForm.roomInput.Items.Add(notValueinComboBox);
+            tariffForm.roomInput.SelectedItem = notValueinComboBox;
 
+            for (int i = 0; i < roomDataGrid.RowCount; i++)
+            {
+                string roomRowValue = roomDataGrid.Rows[i].Cells[0].Value.ToString().Trim();
+                tariffForm.roomInput.Items.Add(roomRowValue);
+            }
 
+            tariffForm.btnSaveInfo.Enabled = false;
+            DialogResult dr = tariffForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Updating("tariffs");
+            }
+        }
+
+        private void btnEditTariff_Click(object sender, EventArgs e)
+        {
+            string tariffId = tariffDataGrid.CurrentRow.Cells[4].Value.ToString().Trim();
+            AddTariff tariffForm = new AddTariff(tariffId);
+
+            tariffForm.tariffInput.Text = tariffDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
+            tariffForm.hoursInput.Text = tariffDataGrid.CurrentRow.Cells[1].Value.ToString().Trim();
+            tariffForm.priceInput.Text = tariffDataGrid.CurrentRow.Cells[3].Value.ToString().Trim();
+
+            tariffForm.roomInput.Items.Add(notValueinComboBox);
+
+            for (int i = 0; i < roomDataGrid.RowCount; i++)
+            {
+                string roomRowValue = roomDataGrid.Rows[i].Cells[0].Value.ToString().Trim();
+                tariffForm.roomInput.Items.Add(roomRowValue);
+            }
+
+            string roomValue = tariffDataGrid.CurrentRow.Cells[2].Value.ToString().Trim();
+            if (roomValue == "" || roomValue == null)
+            {
+                tariffForm.roomInput.SelectedItem = notValueinComboBox;
+            }
+            else
+            {
+                tariffForm.roomInput.SelectedItem = roomValue;
+            }
+
+            DialogResult dr = tariffForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Updating("tariffs");
+            }
+
+        }
+
+        private void btnDelTariff_Click(object sender, EventArgs e)
+        {
+            int tariffDel = Convert.ToInt32(tariffDataGrid.CurrentRow.Cells[4].Value);
+            string tariffName = tariffDataGrid.CurrentRow.Cells[0].Value.ToString().Trim();
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить Тариф " + tariffName + "?", "Предупреждение", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                this.tariffTableAdapter.DeleteQuery(tariffDel);
+                Updating("tariffs");
+            }
+        }
     }
 }
