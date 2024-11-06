@@ -73,6 +73,12 @@
     <Compile Include="AddPC.Designer.cs">
       <DependentUpon>AddPC.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddReservation.Designer.cs">
+      <DependentUpon>AddReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddPC.resx">
       <DependentUpon>AddPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddReservation.resx">
+      <DependentUpon>AddReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddRoom.resx">
       <DependentUpon>AddRoom.cs</DependentUpon>

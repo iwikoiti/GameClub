@@ -64,23 +64,28 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.reservationDataGrid = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelClient = new System.Windows.Forms.Button();
+            this.btnAddClient = new System.Windows.Forms.Button();
             this.authentificationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gamuClubDBDataSet = new GameClub.GamuClubDBDataSet();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.UserTableAdapter();
             this.authentificationTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter();
-            this.reservationDataGrid = new System.Windows.Forms.DataGridView();
             this.reservationTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.ReservationTableAdapter();
+            this.roomTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.RoomTableAdapter();
+            this.tariffTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.TariffTableAdapter();
             this.tabControl1.SuspendLayout();
             this.personalProfile.SuspendLayout();
             this.panelEditInfo.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.authentificationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamuClubDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -432,8 +437,8 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
+            this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.reservationDataGrid);
-            this.tabPage2.Controls.Add(this.dateTimePicker1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -442,13 +447,19 @@
             this.tabPage2.Text = "Бронирование";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // reservationDataGrid
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(628, 413);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker1.TabIndex = 0;
+            this.reservationDataGrid.AllowUserToAddRows = false;
+            this.reservationDataGrid.AllowUserToDeleteRows = false;
+            this.reservationDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reservationDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reservationDataGrid.Location = new System.Drawing.Point(3, 3);
+            this.reservationDataGrid.Name = "reservationDataGrid";
+            this.reservationDataGrid.ReadOnly = true;
+            this.reservationDataGrid.RowHeadersWidth = 51;
+            this.reservationDataGrid.RowTemplate.Height = 24;
+            this.reservationDataGrid.Size = new System.Drawing.Size(986, 523);
+            this.reservationDataGrid.TabIndex = 1;
             // 
             // tabPage3
             // 
@@ -459,6 +470,36 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Сеанс";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnDelClient);
+            this.panel1.Controls.Add(this.btnAddClient);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(3, 446);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(986, 80);
+            this.panel1.TabIndex = 2;
+            // 
+            // btnDelClient
+            // 
+            this.btnDelClient.Location = new System.Drawing.Point(580, 20);
+            this.btnDelClient.Name = "btnDelClient";
+            this.btnDelClient.Size = new System.Drawing.Size(157, 41);
+            this.btnDelClient.TabIndex = 5;
+            this.btnDelClient.Text = "Отменить бронь";
+            this.btnDelClient.UseVisualStyleBackColor = true;
+            this.btnDelClient.Click += new System.EventHandler(this.btnDelClient_Click);
+            // 
+            // btnAddClient
+            // 
+            this.btnAddClient.Location = new System.Drawing.Point(258, 20);
+            this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.Size = new System.Drawing.Size(153, 41);
+            this.btnAddClient.TabIndex = 3;
+            this.btnAddClient.Text = "Создать бронь";
+            this.btnAddClient.UseVisualStyleBackColor = true;
+            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
             // authentificationBindingSource
             // 
@@ -483,22 +524,17 @@
             // 
             this.authentificationTableAdapter1.ClearBeforeFill = true;
             // 
-            // reservationDataGrid
-            // 
-            this.reservationDataGrid.AllowUserToAddRows = false;
-            this.reservationDataGrid.AllowUserToDeleteRows = false;
-            this.reservationDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reservationDataGrid.Location = new System.Drawing.Point(34, 30);
-            this.reservationDataGrid.Name = "reservationDataGrid";
-            this.reservationDataGrid.ReadOnly = true;
-            this.reservationDataGrid.RowHeadersWidth = 51;
-            this.reservationDataGrid.RowTemplate.Height = 24;
-            this.reservationDataGrid.Size = new System.Drawing.Size(926, 237);
-            this.reservationDataGrid.TabIndex = 1;
-            // 
             // reservationTableAdapter1
             // 
             this.reservationTableAdapter1.ClearBeforeFill = true;
+            // 
+            // roomTableAdapter1
+            // 
+            this.roomTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tariffTableAdapter1
+            // 
+            this.tariffTableAdapter1.ClearBeforeFill = true;
             // 
             // GCUser
             // 
@@ -518,10 +554,11 @@
             this.panelEditInfo.ResumeLayout(false);
             this.panelEditInfo.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.authentificationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamuClubDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -569,8 +606,12 @@
         private GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter authentificationTableAdapter1;
         private System.Windows.Forms.BindingSource authentificationBindingSource;
         private System.Windows.Forms.DateTimePicker birthdayInput;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView reservationDataGrid;
         private GamuClubDBDataSetTableAdapters.ReservationTableAdapter reservationTableAdapter1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnDelClient;
+        private System.Windows.Forms.Button btnAddClient;
+        private GamuClubDBDataSetTableAdapters.RoomTableAdapter roomTableAdapter1;
+        private GamuClubDBDataSetTableAdapters.TariffTableAdapter tariffTableAdapter1;
     }
 }

@@ -1083,7 +1083,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn keyboardDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mouseDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView roomDataGrid;
         private System.Windows.Forms.BindingSource roomBindingSource;
         private GamuClubDBDataSetTableAdapters.RoomTableAdapter roomTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameRoomDataGridViewTextBoxColumn;
@@ -1134,5 +1133,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn foodPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn foodIDDataGridViewTextBoxColumn;
         private GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter authentificationTableAdapter1;
+        public System.Windows.Forms.DataGridView roomDataGrid;
     }
 }

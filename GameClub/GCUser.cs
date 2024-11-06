@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static GameClub.GamuClubDBDataSet;
 
 namespace GameClub
 {
@@ -157,9 +158,98 @@ namespace GameClub
                 btnSaveInfo.Enabled = true;
             }
         }
+
+        void Updating(string n)
+        {
+            this.Validate();
+            switch (n)
+            {
+                case "reservations":
+                    /* this.reservationBindingSource.EndEdit();
+                     this.reservationTableAdapter.Update(this.gamuClubDBDataSet.Reservation);
+                     gamuClubDBDataSet.AcceptChanges();
+                     this.reservationTableAdapter.Fill(this.gamuClubDBDataSet.Reservation);*/
+
+                   /* int userId = Convert.ToInt32(this.Tag);
+                    var reservations = reservationTableAdapter1.GetDataBy(userId);
+                    reservationDataGrid.DataSource = reservations;*/
+                    break;
+
+                /*case "menu":
+                    this.foodMenuBindingSource.EndEdit();
+                    this.foodMenuTableAdapter.Update(this.gamuClubDBDataSet.FoodMenu);
+                    gamuClubDBDataSet.AcceptChanges();
+                    this.foodMenuTableAdapter.Fill(this.gamuClubDBDataSet.FoodMenu);
+                    break;*/
+
+                default:
+                    MessageBox.Show("Ошибка с обновлением таблицы");
+                    break;
+            }
+        }
+        /* Бронирование */
+        private void btnAddClient_Click(object sender, EventArgs e)
+        {
+            string userId = this.Tag.ToString();
+            AddReservation resForm = new AddReservation(userId);
+            resForm.btnSaveInfo.Enabled = false;
+
+            resForm.tariffInput.Items.Add(GCAdmin.notValueinComboBox);
+            resForm.tariffInput.SelectedItem = GCAdmin.notValueinComboBox;
+
+            resForm.roomInput.Items.Add(GCAdmin.notValueinComboBox);
+            resForm.roomInput.SelectedItem = GCAdmin.notValueinComboBox;
+
+            resForm.timestartInput.Items.Add(GCAdmin.notValueinComboBox);
+            resForm.timestartInput.SelectedItem = GCAdmin.notValueinComboBox;
+
+            RoomDataTable dataTableRoom = roomTableAdapter1.GetData();
+
+            if (dataTableRoom.Rows.Count > 0)
+            {
+                for (int i = 0; i < dataTableRoom.Rows.Count; i++)
+                {
+                    string nameRoomdb = dataTableRoom.Rows[i]["nameRoom"].ToString();
+                    resForm.roomInput.Items.Add(nameRoomdb);
+                }
+            }
+
+            TariffDataTable dataTableTariff = tariffTableAdapter1.GetData();
+
+            // HashSet для исключения повторений
+            HashSet<string> uniqueTariffs = new HashSet<string>();
+
+            if (dataTableTariff.Rows.Count > 0)
+            {
+                for (int i = 0; i < dataTableTariff.Rows.Count; i++)
+                {
+                    string nameTariffdb = dataTableTariff.Rows[i]["nameTariff"].ToString();
+                    uniqueTariffs.Add(nameTariffdb);
+                }
+            }
+            string[] uniqueTariffsArray = uniqueTariffs.ToArray();
+
+            resForm.tariffInput.Items.Clear();
+            resForm.tariffInput.Items.AddRange(uniqueTariffsArray);
+
+            DialogResult dr = resForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Updating("reservations");
+            }
+        }
+
+        private void btnEditClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelClient_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
-    /* Бронирование */
 
 
 }
