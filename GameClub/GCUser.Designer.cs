@@ -48,8 +48,11 @@
             this.surnameInput = new System.Windows.Forms.TextBox();
             this.birthdayInput = new System.Windows.Forms.DateTimePicker();
             this.passwordLabel = new System.Windows.Forms.Label();
+            this.authentificationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gamuClubDBDataSet = new GameClub.GamuClubDBDataSet();
             this.loginLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.birthdayLabel = new System.Windows.Forms.Label();
             this.fathernameLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -64,28 +67,36 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancelReservation = new System.Windows.Forms.Button();
+            this.btnAddResrvation = new System.Windows.Forms.Button();
             this.reservationDataGrid = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDelClient = new System.Windows.Forms.Button();
-            this.btnAddClient = new System.Windows.Forms.Button();
-            this.authentificationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gamuClubDBDataSet = new GameClub.GamuClubDBDataSet();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderDataGrid = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAddOrder = new System.Windows.Forms.Button();
+            this.sessionDataGrid = new System.Windows.Forms.DataGridView();
             this.userTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.UserTableAdapter();
             this.authentificationTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.AuthentificationTableAdapter();
             this.reservationTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.ReservationTableAdapter();
             this.roomTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.RoomTableAdapter();
             this.tariffTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.TariffTableAdapter();
+            this.foodOrderTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.FoodOrderTableAdapter();
+            this.sessionTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.SessionTableAdapter();
+            this.foodMenuTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.FoodMenuTableAdapter();
             this.tabControl1.SuspendLayout();
             this.personalProfile.SuspendLayout();
             this.panelEditInfo.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.authentificationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamuClubDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDataGrid)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -291,6 +302,16 @@
             this.passwordLabel.TabIndex = 22;
             this.passwordLabel.Text = "label14";
             // 
+            // authentificationBindingSource
+            // 
+            this.authentificationBindingSource.DataMember = "Authentification";
+            this.authentificationBindingSource.DataSource = this.gamuClubDBDataSet;
+            // 
+            // gamuClubDBDataSet
+            // 
+            this.gamuClubDBDataSet.DataSetName = "GamuClubDBDataSet";
+            this.gamuClubDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
@@ -310,6 +331,11 @@
             this.emailLabel.Size = new System.Drawing.Size(62, 20);
             this.emailLabel.TabIndex = 20;
             this.emailLabel.Text = "label12";
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "User";
+            this.userBindingSource.DataSource = this.gamuClubDBDataSet;
             // 
             // birthdayLabel
             // 
@@ -447,6 +473,36 @@
             this.tabPage2.Text = "Бронирование";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnCancelReservation);
+            this.panel1.Controls.Add(this.btnAddResrvation);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(3, 446);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(986, 80);
+            this.panel1.TabIndex = 2;
+            // 
+            // btnCancelReservation
+            // 
+            this.btnCancelReservation.Location = new System.Drawing.Point(580, 20);
+            this.btnCancelReservation.Name = "btnCancelReservation";
+            this.btnCancelReservation.Size = new System.Drawing.Size(157, 41);
+            this.btnCancelReservation.TabIndex = 5;
+            this.btnCancelReservation.Text = "Отменить бронь";
+            this.btnCancelReservation.UseVisualStyleBackColor = true;
+            this.btnCancelReservation.Click += new System.EventHandler(this.btnCancelResrvation_Click);
+            // 
+            // btnAddResrvation
+            // 
+            this.btnAddResrvation.Location = new System.Drawing.Point(258, 20);
+            this.btnAddResrvation.Name = "btnAddResrvation";
+            this.btnAddResrvation.Size = new System.Drawing.Size(153, 41);
+            this.btnAddResrvation.TabIndex = 3;
+            this.btnAddResrvation.Text = "Создать бронь";
+            this.btnAddResrvation.UseVisualStyleBackColor = true;
+            this.btnAddResrvation.Click += new System.EventHandler(this.btnAddResrvation_Click);
+            // 
             // reservationDataGrid
             // 
             this.reservationDataGrid.AllowUserToAddRows = false;
@@ -463,6 +519,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.orderDataGrid);
+            this.tabPage3.Controls.Add(this.panel2);
+            this.tabPage3.Controls.Add(this.sessionDataGrid);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -471,50 +530,53 @@
             this.tabPage3.Text = "Сеанс";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // orderDataGrid
             // 
-            this.panel1.Controls.Add(this.btnDelClient);
-            this.panel1.Controls.Add(this.btnAddClient);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(3, 446);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(986, 80);
-            this.panel1.TabIndex = 2;
+            this.orderDataGrid.AllowUserToAddRows = false;
+            this.orderDataGrid.AllowUserToDeleteRows = false;
+            this.orderDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orderDataGrid.Location = new System.Drawing.Point(428, 3);
+            this.orderDataGrid.Name = "orderDataGrid";
+            this.orderDataGrid.ReadOnly = true;
+            this.orderDataGrid.RowHeadersWidth = 51;
+            this.orderDataGrid.RowTemplate.Height = 24;
+            this.orderDataGrid.Size = new System.Drawing.Size(561, 442);
+            this.orderDataGrid.TabIndex = 2;
             // 
-            // btnDelClient
+            // panel2
             // 
-            this.btnDelClient.Location = new System.Drawing.Point(580, 20);
-            this.btnDelClient.Name = "btnDelClient";
-            this.btnDelClient.Size = new System.Drawing.Size(157, 41);
-            this.btnDelClient.TabIndex = 5;
-            this.btnDelClient.Text = "Отменить бронь";
-            this.btnDelClient.UseVisualStyleBackColor = true;
-            this.btnDelClient.Click += new System.EventHandler(this.btnDelClient_Click);
+            this.panel2.Controls.Add(this.btnAddOrder);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(3, 446);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(986, 80);
+            this.panel2.TabIndex = 1;
             // 
-            // btnAddClient
+            // btnAddOrder
             // 
-            this.btnAddClient.Location = new System.Drawing.Point(258, 20);
-            this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(153, 41);
-            this.btnAddClient.TabIndex = 3;
-            this.btnAddClient.Text = "Создать бронь";
-            this.btnAddClient.UseVisualStyleBackColor = true;
-            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
+            this.btnAddOrder.Location = new System.Drawing.Point(376, 21);
+            this.btnAddOrder.Name = "btnAddOrder";
+            this.btnAddOrder.Size = new System.Drawing.Size(245, 41);
+            this.btnAddOrder.TabIndex = 6;
+            this.btnAddOrder.Text = "Добавить заказ к сеансу";
+            this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
-            // authentificationBindingSource
+            // sessionDataGrid
             // 
-            this.authentificationBindingSource.DataMember = "Authentification";
-            this.authentificationBindingSource.DataSource = this.gamuClubDBDataSet;
-            // 
-            // gamuClubDBDataSet
-            // 
-            this.gamuClubDBDataSet.DataSetName = "GamuClubDBDataSet";
-            this.gamuClubDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataMember = "User";
-            this.userBindingSource.DataSource = this.gamuClubDBDataSet;
+            this.sessionDataGrid.AllowUserToAddRows = false;
+            this.sessionDataGrid.AllowUserToDeleteRows = false;
+            this.sessionDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sessionDataGrid.Cursor = System.Windows.Forms.Cursors.No;
+            this.sessionDataGrid.Enabled = false;
+            this.sessionDataGrid.Location = new System.Drawing.Point(3, 3);
+            this.sessionDataGrid.Name = "sessionDataGrid";
+            this.sessionDataGrid.ReadOnly = true;
+            this.sessionDataGrid.RowHeadersWidth = 51;
+            this.sessionDataGrid.RowTemplate.Height = 24;
+            this.sessionDataGrid.Size = new System.Drawing.Size(391, 442);
+            this.sessionDataGrid.TabIndex = 0;
+            this.sessionDataGrid.TabStop = false;
             // 
             // userTableAdapter1
             // 
@@ -536,6 +598,18 @@
             // 
             this.tariffTableAdapter1.ClearBeforeFill = true;
             // 
+            // foodOrderTableAdapter1
+            // 
+            this.foodOrderTableAdapter1.ClearBeforeFill = true;
+            // 
+            // sessionTableAdapter1
+            // 
+            this.sessionTableAdapter1.ClearBeforeFill = true;
+            // 
+            // foodMenuTableAdapter1
+            // 
+            this.foodMenuTableAdapter1.ClearBeforeFill = true;
+            // 
             // GCUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -553,12 +627,16 @@
             this.personalProfile.PerformLayout();
             this.panelEditInfo.ResumeLayout(false);
             this.panelEditInfo.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.authentificationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamuClubDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.orderDataGrid)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sessionDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -609,9 +687,16 @@
         private System.Windows.Forms.DataGridView reservationDataGrid;
         private GamuClubDBDataSetTableAdapters.ReservationTableAdapter reservationTableAdapter1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnDelClient;
-        private System.Windows.Forms.Button btnAddClient;
+        private System.Windows.Forms.Button btnCancelReservation;
+        private System.Windows.Forms.Button btnAddResrvation;
         private GamuClubDBDataSetTableAdapters.RoomTableAdapter roomTableAdapter1;
         private GamuClubDBDataSetTableAdapters.TariffTableAdapter tariffTableAdapter1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnAddOrder;
+        private System.Windows.Forms.DataGridView sessionDataGrid;
+        private System.Windows.Forms.DataGridView orderDataGrid;
+        private GamuClubDBDataSetTableAdapters.FoodOrderTableAdapter foodOrderTableAdapter1;
+        private GamuClubDBDataSetTableAdapters.SessionTableAdapter sessionTableAdapter1;
+        private GamuClubDBDataSetTableAdapters.FoodMenuTableAdapter foodMenuTableAdapter1;
     }
 }

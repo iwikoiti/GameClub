@@ -104,10 +104,66 @@ namespace GameClub
                     column.HeaderText = "Стоимость тарифа";
                 }
             }
+
+            /* Сеансы и заказы еды */
+            var sessions = sessionTableAdapter1.GetDataBySession(userId);
+            sessionDataGrid.DataSource = sessions;
+
+            foreach (DataGridViewColumn column in sessionDataGrid.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                if (column.Name == "reservationID")
+                {
+                    column.Visible = false;
+                }
+
+                // Переименование заголовков
+                if (column.Name == "sessionID")
+                {
+                    column.HeaderText = "Номер сеанса";
+                }
+                else if (column.Name == "totalPrice")
+                {
+                    column.HeaderText = "Итоговая стоимость";
+                }
+            }
+
+
+            var orders = foodOrderTableAdapter1.GetDataByFoodName(userId);
+            orderDataGrid.DataSource = orders;
+
+            // Настройка свойств колонок
+            foreach (DataGridViewColumn column in orderDataGrid.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                if (column.Name == "foodID")
+                {
+                    column.Visible = false;
+                }
+
+                // Переименование заголовков
+                if (column.Name == "orderID")
+                {
+                    column.HeaderText = "Номер заказа";
+                }
+                else if (column.Name == "sessionID")
+                {
+                    column.HeaderText = "Номер сеанса";
+                }
+                else if (column.Name == "foodName")
+                {
+                    column.HeaderText = "Название блюда";
+                }
+                else if (column.Name == "quantity")
+                {
+                    column.HeaderText = "Количество блюд";
+                }
+            }
         }
 
         /* Личный кабинет */
-
         private void btnEditInfo_Click(object sender, EventArgs e)
         {
             panelEditInfo.Visible = true;
@@ -162,33 +218,32 @@ namespace GameClub
         void Updating(string n)
         {
             this.Validate();
+            int userId = Convert.ToInt32(this.Tag);
             switch (n)
             {
                 case "reservations":
-                    /* this.reservationBindingSource.EndEdit();
-                     this.reservationTableAdapter.Update(this.gamuClubDBDataSet.Reservation);
-                     gamuClubDBDataSet.AcceptChanges();
-                     this.reservationTableAdapter.Fill(this.gamuClubDBDataSet.Reservation);*/
-
-                   /* int userId = Convert.ToInt32(this.Tag);
                     var reservations = reservationTableAdapter1.GetDataBy(userId);
-                    reservationDataGrid.DataSource = reservations;*/
+                    reservationDataGrid.DataSource = reservations;
                     break;
 
-                /*case "menu":
-                    this.foodMenuBindingSource.EndEdit();
-                    this.foodMenuTableAdapter.Update(this.gamuClubDBDataSet.FoodMenu);
-                    gamuClubDBDataSet.AcceptChanges();
-                    this.foodMenuTableAdapter.Fill(this.gamuClubDBDataSet.FoodMenu);
-                    break;*/
+                case "sessions":
+                    var sessions = sessionTableAdapter1.GetDataBySession(userId);
+                    sessionDataGrid.DataSource = sessions;
+                    break;
+
+                case "orders":
+                    var orders = foodOrderTableAdapter1.GetDataByFoodName(userId);
+                    orderDataGrid.DataSource = orders;
+                    break;
 
                 default:
                     MessageBox.Show("Ошибка с обновлением таблицы");
                     break;
             }
         }
+
         /* Бронирование */
-        private void btnAddClient_Click(object sender, EventArgs e)
+        private void btnAddResrvation_Click(object sender, EventArgs e)
         {
             string userId = this.Tag.ToString();
             AddReservation resForm = new AddReservation(userId);
@@ -239,15 +294,94 @@ namespace GameClub
             }
         }
 
-        private void btnEditClient_Click(object sender, EventArgs e)
+        private void btnCancelResrvation_Click(object sender, EventArgs e)
         {
+            DataGridViewRow currentRow = reservationDataGrid.CurrentRow;
 
+            int reservationID = Convert.ToInt32(currentRow.Cells["reservationID"].Value);
+            string statusReservation = currentRow.Cells["statusReservation"].Value.ToString();
+
+            if (statusReservation != "Отменено")
+            {
+                this.reservationTableAdapter1.UpdateReservationStatus("Отменено", reservationID, reservationID);
+                Updating("reservations");
+            }
+            else
+            {
+                MessageBox.Show("Бронь уже отменена.", "Предупреждение");
+            }
         }
 
-        private void btnDelClient_Click(object sender, EventArgs e)
+        /* Сеансы и заказы еды */
+        private void btnAddOrder_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string sessionId = orderDataGrid.CurrentRow.Cells[1].Value.ToString().Trim();
+                Console.WriteLine(sessionId);
+                AddOrder orderForm = new AddOrder(sessionId);
+                orderForm.btnSaveInfo.Enabled = false;
 
+                orderForm.foodInput.Items.Add(GCAdmin.notValueinComboBox);
+                orderForm.foodInput.SelectedItem = GCAdmin.notValueinComboBox;
+
+                FoodMenuDataTable dataTableFood = foodMenuTableAdapter1.GetData();
+
+                if (dataTableFood.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dataTableFood.Rows.Count; i++)
+                    {
+                        string fooddb = dataTableFood.Rows[i]["foodName"].ToString();
+                        orderForm.foodInput.Items.Add(fooddb);
+                    }
+                }
+
+                DialogResult dr = orderForm.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    // Вычисление итоговой стоимости (тариф + заказы)
+                    SessionDataTable sessionDataTable = sessionTableAdapter1.GetDataBySessionID(Convert.ToInt32(sessionId));
+
+                    if (sessionDataTable.Rows.Count > 0)
+                    {
+                        int totalPricedb = Convert.ToInt32(sessionDataTable.Rows[0]["totalPrice"]);
+
+                        FoodOrderDataTable foodOrders = foodOrderTableAdapter1.GetDataBySessionID(Convert.ToInt32(sessionId));
+
+                        foreach (DataRow foodOrderRow in foodOrders.Rows)
+                        {
+                            // Получаем foodID и quantity для этой записи
+                            int foodID = Convert.ToInt32(foodOrderRow["foodID"]);
+                            int quantity = Convert.ToInt32(foodOrderRow["quantity"]);
+
+                            // Получаем цену для foodID из таблицы FoodMenu
+                            FoodMenuDataTable foodMenu = foodMenuTableAdapter1.GetDataByFoodID(foodID);
+
+                            if (foodMenu.Rows.Count > 0)
+                            {
+                                // Получаем цену (foodPrice)
+                                int foodPrice = Convert.ToInt32(foodMenu.Rows[0]["foodPrice"]);
+
+                                // Вычисляем стоимость для этого блюда
+                                int itemTotalPrice = foodPrice * quantity;
+
+                                // Прибавляем к общей стоимости
+                                totalPricedb += itemTotalPrice;
+                            }
+                        }
+                        this.sessionTableAdapter1.UpdateQueryByPrice(totalPricedb, Convert.ToInt32(sessionId), Convert.ToInt32(sessionId));
+
+                        Updating("orders");
+                        Updating("sessions");
+                    }
+                }
         }
+            catch
+            {
+                MessageBox.Show("У вас нет текущих сеансов.", "Предупреждение");
+            }
+}
+
     }
 
 

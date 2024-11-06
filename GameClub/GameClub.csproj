@@ -67,6 +67,12 @@
     <Compile Include="AddFoodMenu.Designer.cs">
       <DependentUpon>AddFoodMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrder.Designer.cs">
+      <DependentUpon>AddOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddFoodMenu.resx">
       <DependentUpon>AddFoodMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrder.resx">
+      <DependentUpon>AddOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddPC.resx">
       <DependentUpon>AddPC.cs</DependentUpon>
