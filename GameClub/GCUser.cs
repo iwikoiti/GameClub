@@ -37,7 +37,7 @@ namespace GameClub
                 birthdayInput.Text = birthdaydb;
                 birthdaydb = birthdaydb.Split(' ')[0];
             }
-            
+
             surnameLabel.Text = surnamedb;
             surnameInput.Text = surnamedb;
 
@@ -103,6 +103,11 @@ namespace GameClub
                 {
                     column.HeaderText = "Стоимость тарифа";
                 }
+                else if (column.Name == "nameRoom")
+                {
+                    column.HeaderText = "Зал";
+                }
+
             }
 
             /* Сеансы и заказы еды */
@@ -375,15 +380,11 @@ namespace GameClub
                         Updating("sessions");
                     }
                 }
-        }
+            }
             catch
             {
                 MessageBox.Show("У вас нет текущих сеансов.", "Предупреждение");
             }
-}
-
+        }
     }
-
-
-
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameClub.GamuClubDBDataSetTableAdapters;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,8 @@ namespace GameClub
 
         private void GCAdmin_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "gamuClubDBDataSet.Session". При необходимости она может быть перемещена или удалена.
+            this.sessionTableAdapter.Fill(this.gamuClubDBDataSet.Session);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gamuClubDBDataSet.FoodMenu". При необходимости она может быть перемещена или удалена.
             this.foodMenuTableAdapter.Fill(this.gamuClubDBDataSet.FoodMenu);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gamuClubDBDataSet.Tariff". При необходимости она может быть перемещена или удалена.
@@ -34,6 +37,93 @@ namespace GameClub
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gamuClubDBDataSet.User". При необходимости она может быть перемещена или удалена.
             this.userTableAdapter.Fill(this.gamuClubDBDataSet.User);
 
+            /* Бронирование */
+            var reservations = reservationTableAdapter1.GetDataByAdminReservation();
+            reservationDataGrid.DataSource = reservations;
+
+            foreach (DataGridViewColumn column in reservationDataGrid.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                if (column.Name == "userID" || column.Name == "tariffID")
+                {
+                    column.Visible = false;
+                }
+
+                if (column.Name == "reservationID")
+                {
+                    column.HeaderText = "Номер бронирования";
+                }
+                else if (column.Name == "startDateTime")
+                {
+                    column.HeaderText = "Время начала";
+                }
+                else if (column.Name == "endDateTime")
+                {
+                    column.HeaderText = "Время окончания";
+                }
+                else if (column.Name == "statusReservation")
+                {
+                    column.HeaderText = "Статус бронирования";
+                }
+                else if (column.Name == "nameTariff")
+                {
+                    column.HeaderText = "Название тарифа";
+                }
+                else if (column.Name == "price")
+                {
+                    column.HeaderText = "Стоимость тарифа";
+                }
+                else if (column.Name == "FullName")
+                {
+                    column.HeaderText = "Клиент";
+                }
+                else if (column.Name == "nameRoom")
+                {
+                    column.HeaderText = "Зал";
+                }
+            }
+
+            /* Сеансы и заказы */
+            //GetDataBySessionsAndOrders
+
+            var orders = foodOrderTableAdapter1.GetDataBySessionsAndOrders();
+            ordersDataGrid.DataSource = orders;
+
+            foreach (DataGridViewColumn column in ordersDataGrid.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                if (column.Name == "tariffID" || column.Name == "foodID" || column.Name == "reservationID")
+                {
+                    column.Visible = false;
+                }
+                else if (column.Name == "nameTariff")
+                {
+                    column.HeaderText = "Название тарифа";
+                }
+                else if (column.Name == "foodName")
+                {
+                    column.HeaderText = "Блюдо";
+                }
+                else if (column.Name == "FullName")
+                {
+                    column.HeaderText = "Клиент";
+                }
+                else if (column.Name == "orderID")
+                {
+                    column.HeaderText = "Номер заказа";
+                }
+                else if (column.Name == "sessionID")
+                {
+                    column.HeaderText = "Номер сеанса";
+                }
+                else if (column.Name == "quantity")
+                {
+                    column.HeaderText = "Количество блюд";
+                }
+
+            }
         }
 
         void Updating(string n)
@@ -81,7 +171,10 @@ namespace GameClub
                     gamuClubDBDataSet.AcceptChanges();
                     this.foodMenuTableAdapter.Fill(this.gamuClubDBDataSet.FoodMenu);
                     break;
-
+                case "reservations":
+                    var reservations = reservationTableAdapter1.GetDataByAdminReservation();
+                    reservationDataGrid.DataSource = reservations;
+                    break;
                 default:
                     MessageBox.Show("Ошибка с обновлением таблицы");
                     break;
@@ -509,6 +602,24 @@ namespace GameClub
             catch
             {
                 MessageBox.Show("Данный тариф стоит в бронированиях. Его удаление сейчас невозможно.");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow currentRow = reservationDataGrid.CurrentRow;
+
+            string reservationID = currentRow.Cells["reservationID"].Value.ToString().Trim();
+            string statusReservation = currentRow.Cells["statusReservation"].Value.ToString().Trim();
+
+            ChangeReservationStatusFromAdmin statusForm = new ChangeReservationStatusFromAdmin(reservationID);
+
+            statusForm.statusInput.SelectedItem = statusReservation;
+               
+            DialogResult dr = statusForm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Updating("reservations");
             }
         }
     }

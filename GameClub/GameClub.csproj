@@ -97,6 +97,12 @@
     <Compile Include="AddTariff.Designer.cs">
       <DependentUpon>AddTariff.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeReservationStatusFromAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeReservationStatusFromAdmin.Designer.cs">
+      <DependentUpon>ChangeReservationStatusFromAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="GamuClubDBDataSet.cs">
       <DependentUpon>GamuClubDBDataSet.xsd</DependentUpon>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddTariff.resx">
       <DependentUpon>AddTariff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeReservationStatusFromAdmin.resx">
+      <DependentUpon>ChangeReservationStatusFromAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GCLogIn.resx">
       <DependentUpon>GCLogIn.cs</DependentUpon>

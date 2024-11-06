@@ -57,7 +57,6 @@
             this.fathernameLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.surnameLabel = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnEditInfo = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -84,6 +83,7 @@
             this.foodOrderTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.FoodOrderTableAdapter();
             this.sessionTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.SessionTableAdapter();
             this.foodMenuTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.FoodMenuTableAdapter();
+            this.btnExit = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.personalProfile.SuspendLayout();
             this.panelEditInfo.SuspendLayout();
@@ -377,16 +377,6 @@
             this.surnameLabel.TabIndex = 16;
             this.surnameLabel.Text = "label8";
             // 
-            // btnExit
-            // 
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(44, 462);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(336, 33);
-            this.btnExit.TabIndex = 15;
-            this.btnExit.Text = "Выйти";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
             // btnEditInfo
             // 
             this.btnEditInfo.Location = new System.Drawing.Point(44, 423);
@@ -610,6 +600,16 @@
             // 
             this.foodMenuTableAdapter1.ClearBeforeFill = true;
             // 
+            // btnExit
+            // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.Location = new System.Drawing.Point(44, 462);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(336, 33);
+            this.btnExit.TabIndex = 15;
+            this.btnExit.Text = "Выйти";
+            this.btnExit.UseVisualStyleBackColor = true;
+            // 
             // GCUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -669,7 +669,6 @@
         private System.Windows.Forms.Label fathernameLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label surnameLabel;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnEditInfo;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
@@ -698,5 +697,6 @@
         private GamuClubDBDataSetTableAdapters.FoodOrderTableAdapter foodOrderTableAdapter1;
         private GamuClubDBDataSetTableAdapters.SessionTableAdapter sessionTableAdapter1;
         private GamuClubDBDataSetTableAdapters.FoodMenuTableAdapter foodMenuTableAdapter1;
+        private System.Windows.Forms.Button btnExit;
     }
 }
