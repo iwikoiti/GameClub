@@ -85,6 +85,9 @@
     <Compile Include="AddTariff.Designer.cs">
       <DependentUpon>AddTariff.cs</DependentUpon>
     </Compile>
+    <Compile Include="GamuClubDBDataSet.cs">
+      <DependentUpon>GamuClubDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GamuClubDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

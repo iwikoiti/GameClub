@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameClub.GamuClubDBDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,10 @@ namespace GameClub
 {
     public partial class GCUser : Form
     {
-        public GCUser(string surnamedb, string namedb, string fathernamedb, string birthdaydb, string emaildb, string logindb, string passworddb)
+        public GCUser(string userId, string surnamedb, string namedb, string fathernamedb, string birthdaydb, string emaildb, string logindb, string passworddb)
         {
             InitializeComponent();
+            this.Tag = userId;
             if (fathernamedb == "" || fathernamedb == null)
             {
                 fathernamedb = "-";
@@ -57,6 +59,50 @@ namespace GameClub
 
         private void GCUser_Load(object sender, EventArgs e)
         {
+            /* Бронирование */
+            //Вывод в таблицу бронирования с названием и стоимостью тарифа
+            int userId = Convert.ToInt32(this.Tag);
+            var reservations = reservationTableAdapter1.GetDataBy(userId);
+            reservationDataGrid.DataSource = reservations;
+
+            // Настройка свойств колонок
+            foreach (DataGridViewColumn column in reservationDataGrid.Columns)
+            {
+                // Изменение AutoSizeMode для всех колонок, чтобы они заполнили доступное пространство
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                // Скрыть колонки userID и tariffID
+                if (column.Name == "userID" || column.Name == "tariffID")
+                {
+                    column.Visible = false;
+                }
+
+                // Переименование заголовков
+                if (column.Name == "reservationID")
+                {
+                    column.HeaderText = "Номер бронирования";
+                }
+                else if (column.Name == "startDateTime")
+                {
+                    column.HeaderText = "Время начала";
+                }
+                else if (column.Name == "endDateTime")
+                {
+                    column.HeaderText = "Время окончания";
+                }
+                else if (column.Name == "statusReservation")
+                {
+                    column.HeaderText = "Статус бронирования";
+                }
+                else if (column.Name == "nameTariff")
+                {
+                    column.HeaderText = "Название тарифа";
+                }
+                else if (column.Name == "price")
+                {
+                    column.HeaderText = "Стоимость тарифа";
+                }
+            }
         }
 
         /* Личный кабинет */

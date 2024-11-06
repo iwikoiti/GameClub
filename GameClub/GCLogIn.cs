@@ -58,8 +58,8 @@ namespace GameClub
 
                     Console.WriteLine(surnamedb + " " + namedb + " " + fathernamedb + " " + birthdaydb + " " + emaildb + " " + logindb + " " + passworddb);
 
-                    GCUser gcUser = new GCUser(surnamedb, namedb, fathernamedb, birthdaydb, emaildb, logindb, passworddb);
-                    gcUser.Tag = userId;
+                    GCUser gcUser = new GCUser(userId.ToString(), surnamedb, namedb, fathernamedb, birthdaydb, emaildb, logindb, passworddb);
+                    //gcUser.Tag = userId;
                     this.Hide();
                     DialogResult dr = gcUser.ShowDialog();
                     if (dr == DialogResult.Cancel)
