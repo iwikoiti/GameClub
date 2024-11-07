@@ -41,6 +41,7 @@
             this.btnSaveInfo = new System.Windows.Forms.Button();
             this.reservationTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.ReservationTableAdapter();
             this.tariffTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.TariffTableAdapter();
+            this.sessionTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.SessionTableAdapter();
             this.panelEditInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,6 +187,10 @@
             // 
             this.tariffTableAdapter1.ClearBeforeFill = true;
             // 
+            // sessionTableAdapter1
+            // 
+            this.sessionTableAdapter1.ClearBeforeFill = true;
+            // 
             // AddReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -198,7 +203,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddReservation";
+            this.Text = "Бронирование";
             this.panelEditInfo.ResumeLayout(false);
             this.panelEditInfo.PerformLayout();
             this.ResumeLayout(false);
@@ -220,5 +225,6 @@
         public System.Windows.Forms.ComboBox tariffInput;
         public System.Windows.Forms.ComboBox timestartInput;
         public System.Windows.Forms.ComboBox roomInput;
+        private GamuClubDBDataSetTableAdapters.SessionTableAdapter sessionTableAdapter1;
     }
 }

@@ -199,12 +199,18 @@ namespace GameClub
             string newEmail = emailInput.Text.ToString();
             int userID = Convert.ToInt32(this.Tag);
 
-            Console.WriteLine(newSurname + " " + newName + " " + newFathername + " " + formattedBirthday + " " + newEmail + " " + userID + " " + userID);
+            //Console.WriteLine(newSurname + " " + newName + " " + newFathername + " " + formattedBirthday + " " + newEmail + " " + userID + " " + userID);
 
             this.authentificationTableAdapter1.UpdateQuery(newLogin, newPassword, loginLabel.Text.ToString());
             this.userTableAdapter1.UpdateQuery(newSurname, newName, newFathername, formattedBirthday, newEmail, userID, userID);
 
             panelEditInfo.Visible = false;
+
+            // Обновление данных юзера
+            userBindingSource.EndEdit();
+            this.userTableAdapter1.Update(this.gamuClubDBDataSet.User);
+            this.userTableAdapter1.FillByUser(this.gamuClubDBDataSet.User, newLogin);
+            userBindingSource.ResetBindings(false);
 
         }
 
@@ -310,6 +316,7 @@ namespace GameClub
             {
                 this.reservationTableAdapter1.UpdateReservationStatus("Отменено", reservationID, reservationID);
                 Updating("reservations");
+                Updating("sessions");
             }
             else
             {
@@ -322,7 +329,7 @@ namespace GameClub
         {
             try
             {
-                string sessionId = orderDataGrid.CurrentRow.Cells[1].Value.ToString().Trim();
+                string sessionId = sessionDataGrid.CurrentRow.Cells[1].Value.ToString().Trim();
                 Console.WriteLine(sessionId);
                 AddOrder orderForm = new AddOrder(sessionId);
                 orderForm.btnSaveInfo.Enabled = false;

@@ -36,6 +36,7 @@ namespace GameClub
             {
                 int tariffId = Convert.ToInt32(dataTableTariff.Rows[0]["tariffID"]);
                 int tariffHours = Convert.ToInt32(dataTableTariff.Rows[0]["hoursCount"]);
+                int tariffPrice = Convert.ToInt32(dataTableTariff.Rows[0]["price"]);
 
                 DateTime newEndTime = newStartTime.AddHours(tariffHours);
 
@@ -44,6 +45,15 @@ namespace GameClub
 
                 //Console.WriteLine("meme = " + userId + " " + tariffId + " " + newRoom  + " " + finalStartDateTime + " " + finalEndDateTime + " " + newStatus);
                 this.reservationTableAdapter1.InsertQuery(userId, tariffId, finalStartDateTime, finalEndDateTime, newStatus);
+
+
+                ReservationDataTable dataTableRes =  reservationTableAdapter1.GetDataByReservationIDForSession(userId, tariffId, finalStartDateTime, finalEndDateTime);
+
+                if (dataTableRes.Rows.Count > 0)
+                {
+                    int resID = Convert.ToInt32(dataTableRes.Rows[0]["reservationID"]);
+                    this.sessionTableAdapter1.Insert(resID, tariffPrice);
+                }
             }
             else
             {
