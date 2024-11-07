@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.resolutionInput = new System.Windows.Forms.TextBox();
             this.storageInput = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.modelInput = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSaveInfo = new System.Windows.Forms.Button();
-            this.resolutionInput = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.consoleTableAdapter1 = new GameClub.GamuClubDBDataSetTableAdapters.ConsoleTableAdapter();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,13 @@
             this.panel1.Size = new System.Drawing.Size(528, 155);
             this.panel1.TabIndex = 36;
             // 
+            // resolutionInput
+            // 
+            this.resolutionInput.Location = new System.Drawing.Point(281, 103);
+            this.resolutionInput.Name = "resolutionInput";
+            this.resolutionInput.Size = new System.Drawing.Size(200, 27);
+            this.resolutionInput.TabIndex = 31;
+            // 
             // storageInput
             // 
             this.storageInput.Location = new System.Drawing.Point(281, 65);
@@ -61,6 +68,15 @@
             this.storageInput.Size = new System.Drawing.Size(200, 27);
             this.storageInput.TabIndex = 28;
             this.storageInput.TextChanged += new System.EventHandler(this.modelInput_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(48, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 20);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Разрешение:";
             // 
             // modelInput
             // 
@@ -109,22 +125,6 @@
             this.btnSaveInfo.UseVisualStyleBackColor = true;
             this.btnSaveInfo.Click += new System.EventHandler(this.btnSaveInfo_Click);
             // 
-            // resolutionInput
-            // 
-            this.resolutionInput.Location = new System.Drawing.Point(281, 103);
-            this.resolutionInput.Name = "resolutionInput";
-            this.resolutionInput.Size = new System.Drawing.Size(200, 27);
-            this.resolutionInput.TabIndex = 31;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 20);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Разрешение:";
-            // 
             // consoleTableAdapter1
             // 
             this.consoleTableAdapter1.ClearBeforeFill = true;
@@ -138,10 +138,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSaveInfo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddConsole";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddConsole";
+            this.Text = "Консоль";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -172,7 +172,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddRoom";
+            this.Text = "Игровой зал";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gamuClubDBDataSet)).EndInit();

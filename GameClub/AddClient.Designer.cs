@@ -244,7 +244,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddClient";
+            this.Text = "Клиент";
             this.panelEditInfo.ResumeLayout(false);
             this.panelEditInfo.PerformLayout();
             this.ResumeLayout(false);
